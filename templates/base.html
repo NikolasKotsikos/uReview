@@ -29,12 +29,12 @@
                         {% if session.user %}
                         <!--Logout button-->
                         <li>
-                           <a id="logout-btn" class="btn" href="#">Log out</a>
+                           <a id="logout-btn" class="btn" href="#">Log out {{ username }}</a>
                         </li>
                         {% else %}
                         <!--Login button-->
                         <li>
-                           <a id="login-btn" class="btn modal-trigger" href="#">Log in</a>
+                           <a id="login-btn" class="btn modal-trigger" href="{{ url_for('login') }}">Log in</a>
                         </li>
                         {% endif %}
                         <!-- Dropdown sidenav menu trigger -->
@@ -95,7 +95,7 @@
     {% block content%}
     {% endblock %}
     </main>
-    
+
     <!--Footer-->    
     <footer class="page-footer orange darken-1">
         <div class="container">

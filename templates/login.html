@@ -4,12 +4,12 @@
         <div class="row">
             <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('create_account') }}">
                 <div class="card-panel">                    
-                    <h3 class="center-align orange-text text-darken-1">&gt;Create Account&lt;</h3>
+                    <h3 class="center-align orange-text text-darken-1">&gt;Log In&lt;</h3>
                     <!--Create Account Form-->
                     <!--Username Input-->
                     <div class="row">
                         <div class="input-field col s12">
-                            <i class="fas fa-user-plus prefix grey-text text-darken-2"></i>
+                            <i class="fas fa-user-cog prefix grey-text text-darken-2"></i>
                             <input id="username" name="username" type="text" minlength="5"
                                 maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                             <label for="username">Username</label>
@@ -24,7 +24,7 @@
                             <label for="password">Password</label>
                         </div>
                     </div>
-                    <!--Register Button-->
+                    <!--Log In Button-->
                     <div class="row">
                         <button type="submit" class="col btn-large grey darken-2">
                             Create Account <i class="fas fa-sign-in-alt"></i>
@@ -33,9 +33,8 @@
                 </div>
             </form>
         </div>
-         <div class="row col s12">
-            Already have an account?
-            <a href="{{ url_for('login') }}" class="light-blue-text text-darken-4">Log In</a>
+        <div class="row col s12">
+            Haven't got an account yet?
+            <a href="{{ url_for('create_account') }}" class="light-blue-text text-darken-4">Create Account</a>
         </div>
-
 {% endblock %}
