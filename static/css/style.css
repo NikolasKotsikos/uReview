@@ -1,7 +1,23 @@
 body {
     background-color: #e0e0e0;
+    /* Sticky footer style from Materialize 
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;*/ 
 }
 
+.flashes h4 {
+    line-height: 2;
+}
 .nav-wrapper a span {
     color: #fb8c00;
+}
+
+/* Sticky footer style from Materialize 
+main {
+    flex: 1 0 auto;
+  }*/
+
+.page-footer .footer-copyright {
+    background-color: transparent;
 }

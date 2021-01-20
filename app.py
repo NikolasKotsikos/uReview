@@ -25,8 +25,24 @@ def get_reviews():
     return render_template("reviews.html", reviews=reviews)
 
 
-@app.route("/create_account")
+@app.route("/create_account", methods=["GET", "POST"])
 def create_account():
+    if request.method == "POST":
+        #check if username already exists in db
+        existing_user = mongo.db.users.find_one(
+        {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            flash("This username is taken")
+        create_account = {
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password"))
+        }
+        mongo.db.users.insert_one(create_account)
+
+        #put the new user into 'session' cookie
+        session["user"] = request.form.get("username").lower()
+        flash("Account created successfuly!")
     return render_template("create_account.html")
 
 

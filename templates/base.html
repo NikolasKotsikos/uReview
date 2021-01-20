@@ -78,8 +78,34 @@
         </nav>
       
     </header>
+    <section>
+        <!--Flash Messages-->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="row flashes">
+                        <h3 class="orange darken-1 center-align">{{ message }}</h3>
+                    </div>
+                {% endfor%}
+            {% endif %}
+        {% endwith %}
+    </section>
+
+    <main class="container">
     {% block content%}
     {% endblock %}
+    </main>
+    
+    <!--Footer-->    
+    <footer class="page-footer orange darken-1">
+        <div class="container">
+            <div class="row">
+                <div class="footer-copyright grey-text text-darken-2">
+                    © 2021 Nikolas Kotsikos           
+                </div>
+            </div>    
+        </div>
+    </footer>  
 
     <!--Scripts-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
