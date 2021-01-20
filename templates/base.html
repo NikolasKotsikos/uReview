@@ -1,35 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+        type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+
+    {% block styles %}
+    {% endblock %}
 
     <title>uReview</title>
+
 </head>
+
 <body>
-    <nav>
-    <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">uReview</a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="{{ url_for('get_reviews') }}">Reviews</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">Javascript</a></li>
-        <li><a href="mobile.html">Mobile</a></li>
-      </ul>
-    </div>
-  </nav>
+    <header>
+        <!--Top Navbar-->
+        <nav class="nav-extended grey darken-2">
+            <div class="nav-wrapper">
+                <a href="#!" class="brand-logo left">u<span>Review</span>&gt;<span>&gt;</span>&gt;</a>
+                <!-- Navbar buttons -->
+                     <ul class="nav-btns right">
+                        
+                        {% if session.user %}
+                        <!--Logout button-->
+                        <li>
+                           <a id="logout-btn" class="btn" href="#">Log out</a>
+                        </li>
+                        {% else %}
+                        <!--Login button-->
+                        <li>
+                           <a id="login-btn" class="btn modal-trigger" href="#">Log in</a>
+                        </li>
+                        {% endif %}
+                        <!-- Dropdown sidenav menu trigger -->
+                        <li>
+                           <a href="#" aria-label="menu icon" id="menu" data-target="menu-items"
+                              class="sidenav-trigger show-on-large"><i id="menu-icon" class="fas fa-bars"></i></a>
+                        </li>
+                     </ul>
+                     <!--Nav menu links-->
+                     <ul id="menu-items" class="sidenav right">
+                        <li>
+                           <a class="sidenav-close" href="#">Home</a>
+                        </li>
+                        <li>
+                           <a class="sidenav-close" href="#">Browse Reviews</a>
+                        </li>
+                        {% if session.user %}
+                        <li>
+                           <a class="sidenav-close" href="#">Add a Review</a>
+                        </li>
+                        {% endif %}
+                        <li>
+                           <a class="sidenav-close" href="#">Genres</a>
+                        </li>
+                        <li>
+                           <a class="sidenav-close" href="#">Platforms</a>
+                        </li>
+                        {% if session.user|lower == "admin"|lower %}
+                        <li>
+                           <a class="sidenav-close" href="#">Add Genre</a>
+                        </li>
+                        <li>
+                           <a class="sidenav-close" href="#">Add Platform</a>
+                        </li>
+                        {% endif %}                       
+                     </ul>
+            </div>
+        </nav>
+      
+    </header>
+    {% block content%}
+    {% endblock %}
 
-  <ul class="sidenav" id="mobile-demo">
-    <li><a href="{{ url_for('get_reviews') }}">Reviews</a></li>
-    <li><a href="badges.html">Components</a></li>
-    <li><a href="collapsible.html">Javascript</a></li>
-    <li><a href="mobile.html">Mobile</a></li>
-  </ul>
+    <!--Scripts-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
-<!--Scripts-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    {% block scripts %}
+    {% endblock %}
 </body>
+
 </html>
