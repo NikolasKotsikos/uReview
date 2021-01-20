@@ -2,10 +2,10 @@
 {% block content %}
 
         <div class="row">
-            <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('create_account') }}">
+            <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
                 <div class="card-panel">                    
                     <h3 class="center-align orange-text text-darken-1">&gt;Log In&lt;</h3>
-                    <!--Create Account Form-->
+                    <!--Log In Form-->
                     <!--Username Input-->
                     <div class="row">
                         <div class="input-field col s12">
@@ -27,14 +27,15 @@
                     <!--Log In Button-->
                     <div class="row">
                         <button type="submit" class="col btn-large grey darken-2">
-                            Create Account <i class="fas fa-sign-in-alt"></i>
+                           Log In<i class="fas fa-sign-in-alt"></i>
                         </button>
+                    </div>
+                    <div class="row col s12">
+                        Haven't got an account yet?
+                        <a href="{{ url_for('create_account') }}" class="light-blue-text text-darken-4">Create Account</a>
                     </div>
                 </div>
             </form>
         </div>
-        <div class="row col s12">
-            Haven't got an account yet?
-            <a href="{{ url_for('create_account') }}" class="light-blue-text text-darken-4">Create Account</a>
-        </div>
+        
 {% endblock %}

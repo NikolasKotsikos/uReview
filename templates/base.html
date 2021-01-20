@@ -29,12 +29,12 @@
                         {% if session.user %}
                         <!--Logout button-->
                         <li>
-                           <a id="logout-btn" class="btn" href="#">Log out {{ username }}</a>
+                           <a id="logout-btn" class="btn orange darken-1" href="{{ url_for('logout') }}">Log out</a>
                         </li>
                         {% else %}
                         <!--Login button-->
                         <li>
-                           <a id="login-btn" class="btn modal-trigger" href="{{ url_for('login') }}">Log in</a>
+                           <a id="login-btn" class="btn orange darken-1" href="{{ url_for('login') }}">Log in</a>
                         </li>
                         {% endif %}
                         <!-- Dropdown sidenav menu trigger -->
