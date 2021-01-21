@@ -22,7 +22,7 @@
         <!--Top Navbar-->
         <nav class="nav-extended grey darken-2">
             <div class="nav-wrapper">
-                <a href="#!" class="brand-logo left">u<span>Review</span>&gt;<span>&gt;</span>&gt;</a>
+                <a href="{{ url_for('home') }}" class="brand-logo text-shadow left">u<span>Review</span>&gt;<span>&gt;</span>&gt;</a>
                 <!-- Navbar buttons -->
                      <ul class="nav-btns right">
                         
@@ -46,7 +46,7 @@
                      <!--Nav menu links-->
                      <ul id="menu-items" class="sidenav right">
                         <li>
-                           <a class="sidenav-close" href="#">Home</a>
+                           <a class="sidenav-close" href="{{ url_for('home') }}">Home</a>
                         </li>
                         <li>
                            <a class="sidenav-close" href="#">Browse Reviews</a>
@@ -101,7 +101,7 @@
         <div class="container">
             <div class="row">
                 <div class="footer-copyright grey-text text-darken-2">
-                    © 2021 Nikolas Kotsikos           
+                    <span>© 2021 Nikolas Kotsikos</span>           
                 </div>
             </div>    
         </div>

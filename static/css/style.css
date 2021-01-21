@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500&family=Roboto:wght@300;400&display=swap');
+
+/*-------------------------------------General*/
 body {
     background-color: #e0e0e0;
+    font-family: "Roboto", sans-serif;
     /* Sticky footer style from Materialize 
     display: flex;
     min-height: 100vh;
@@ -8,6 +12,16 @@ body {
 
 .flashes h4 {
     line-height: 2;
+}
+
+.text-shadow {
+    text-shadow: 1px 1px 1px rgba(20, 20, 20, 0.5);
+}
+
+/*-------------------------------------Navbar*/
+.brand-logo {
+    font-family: "Orbitron", sans-serif;
+    font-weight: 500;
 }
 .nav-wrapper a span {
     color: #fb8c00;
@@ -18,6 +32,33 @@ main {
     flex: 1 0 auto;
   }*/
 
-.page-footer .footer-copyright {
-    background-color: transparent;
+/*--------------------------------Log-in & Create Account Page*/
+
+.card-panel {
+    height: 32em;
+    margin-top: 30px;
 }
+
+.card-panel h4 {
+    font-family: "Orbitron", sans-serif;
+    font-weight: 400;
+}
+.login-btn,
+.ca-btn,
+.link {
+    display: grid;
+    place-items: center;
+}
+
+.page-footer .footer-copyright {
+    margin: 0;
+    background-color: transparent;    
+}
+
+.page-footer .container .row {
+    display: grid;
+    place-items: center;
+}
+
+
+

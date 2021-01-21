@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 
-        <div class="row">
+        <div class="row login-wrapper">
             <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
                 <div class="card-panel">                    
-                    <h3 class="center-align orange-text text-darken-1">&gt;Log In&lt;</h3>
+                    <h4 class="center-align text-shadow orange-text text-darken-1">&gt;Log In&lt;</h4>
                     <!--Log In Form-->
                     <!--Username Input-->
                     <div class="row">
@@ -25,12 +25,12 @@
                         </div>
                     </div>
                     <!--Log In Button-->
-                    <div class="row">
+                    <div class="row login-btn">
                         <button type="submit" class="col btn-large grey darken-2">
                            Log In<i class="fas fa-sign-in-alt"></i>
                         </button>
                     </div>
-                    <div class="row col s12">
+                    <div class="row col s12 link">
                         Haven't got an account yet?
                         <a href="{{ url_for('create_account') }}" class="light-blue-text text-darken-4">Create Account</a>
                     </div>

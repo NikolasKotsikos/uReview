@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 
-        <div class="row">
+        <div class="row ca-wrapper">
             <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('create_account') }}">
                 <div class="card-panel">                    
-                    <h3 class="center-align orange-text text-darken-1">&gt;Create Account&lt;</h3>
+                    <h4 class="center-align text-shadow orange-text text-darken-1">&gt;Create Account&lt;</h4>
                     <!--Create Account Form-->
                     <!--Username Input-->
                     <div class="row">
@@ -24,13 +24,13 @@
                             <label for="password">Password</label>
                         </div>
                     </div>
-                    <!--Register Button-->
-                    <div class="row">
+                    <!--Create Account Button-->
+                    <div class="row ca-btn">
                         <button type="submit" class="col btn-large grey darken-2">
                             Create Account <i class="fas fa-sign-in-alt"></i>
                         </button>
                     </div>
-                    <div class="row col s12">
+                    <div class="row col s12 link">
                             Already have an account?
                             <a href="{{ url_for('login') }}" class="light-blue-text text-darken-4">Log In</a>
                     </div>
