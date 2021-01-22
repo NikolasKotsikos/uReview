@@ -2,35 +2,39 @@
 {% block content %}
 
 <section class="row callout">
-   <div class="img-wrapper">
-        <img
-        class="responsive-img hero-img"
-        loading="lazy"
-        src="{{ url_for('static', filename='assets/images/hero-img.png') }}"
-        alt="hero image"
-        />
+    <div class="img-wrapper">
+        <img class="responsive-img hero-img" loading="lazy"
+            src="{{ url_for('static', filename='assets/images/hero-img.png') }}" alt="hero image" />
     </div>
-   <div class="overlay-text">
-      <h4 class="flow-text">Got and opinion or want one?</h4>
-      <h4 class="flow-text">Browse reviews or add one yourself!</h4>
-      <div class="callout-btns">
-         <a class="waves-effect waves-grey btn-flat grey darken-2" href="{{ url_for('get_reviews') }}">Browse Reviews</a>
-         {% if session.user %}
-         <a class="waves-effect waves-grey btn-flat grey darken-2" href="#">Add a Review
-         <i class="material-icons">add_circle_outline</i></a>
-         {% else %}
-         <a class="waves-effect waves-grey btn-flat grey darken-2" href="{{ url_for('create_account') }}">Create Account</a>
-         {% endif %}
-      </div>      
-   </div>
+    <div class="overlay-text">
+        <h4 class="flow-text">Got and opinion or want one?</h4>
+        <h4 class="flow-text">Browse reviews or add one yourself!</h4>
+        <div class="callout-btns">
+            <a class="waves-effect waves-grey btn-flat flow-text grey darken-2"
+                href="{{ url_for('get_reviews') }}">Browse Reviews</a>
+            {% if session.user %}
+            <a class="waves-effect waves-grey btn-flat flow-text grey darken-2" href="#">Add a Review
+                <i class="material-icons">add_circle_outline</i></a>
+            {% else %}
+            <a class="waves-effect waves-grey btn-flat flow-text grey darken-2"
+                href="{{ url_for('create_account') }}">Create Account</a>
+            {% endif %}
+        </div>
+    </div>
 </section>
 
-<section class="row about">
-<div class="col s12 m8 offset-m2">
-    <div class="card-panel">
-        <h4 class="center-align orange-text text-darken-1 text-shadow">What is uReview?</h4>
+<section class="row">
+    <div class="col s12 m8 offset-m2">
+        <div class="card-panel about">
+            <h4 class="center-align flow-text orange-text text-darken-1 text-shadow">What is uReview?</h4>
+            <p class="flow-text center-align">
+                Aren't you tired of reading reviews that you can't trust the reviewer's motives?
+                uReview features 100% user generated content, representing the honest opinions of
+                the gamers like yourself, independent of gaming platform. With respect and passion, without prejudice,
+                read reviews written from your peers, or make an account and add your own reviews!
+            </p>
+        </div>
     </div>
-</div>
 </section>
 
 

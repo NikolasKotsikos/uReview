@@ -29,12 +29,12 @@
                         {% if session.user %}
                         <!--Logout button-->
                         <li>
-                           <a id="logout-btn" class="btn orange darken-1" href="{{ url_for('logout') }}">Log out</a>
+                           <a id="logout-btn" class="btn orange darken-1 text-shadow hide-on-small-only" href="{{ url_for('logout') }}">Log out</a>
                         </li>
                         {% else %}
                         <!--Login button-->
                         <li>
-                           <a id="login-btn" class="btn orange darken-1" href="{{ url_for('login') }}">Log in</a>
+                           <a id="login-btn" class="btn orange darken-1 text-shadow hide-on-small-only" href="{{ url_for('login') }}">Log in</a>
                         </li>
                         {% endif %}
                         <!-- Dropdown sidenav menu trigger -->
@@ -68,6 +68,17 @@
                         </li>
                         <li>
                            <a class="sidenav-close" href="#">Add Platform</a>
+                        </li>
+                        {% endif %}
+                        {% if session.user %}
+                         <!--Logout Mobile-->
+                        <li>
+                           <a id="logout_mob" class="sidenav-close show-on-small" href="{{ url_for('logout') }}">Log Out</a>
+                        </li>
+                        {% else %}
+                          <!--Login Mobile-->
+                        <li>
+                           <a id="login_mob" class="sidenav-close show-on-small" href="{{ url_for('login') }}">Log In</a>
                         </li>
                         {% endif %}
                         <li>
