@@ -20,71 +20,73 @@
 <body>
     <header>
         <!--Top Navbar-->
-        <nav class="nav-extended grey darken-2">
-            <div class="nav-wrapper">
-                <a href="{{ url_for('home') }}" class="brand-logo text-shadow left">u<span>Review</span>&gt;<span>&gt;</span>&gt;</a>
-                <!-- Navbar buttons -->
-                     <ul class="nav-btns right">
-                        
-                        {% if session.user %}
-                        <!--Logout button-->
-                        <li>
-                           <a id="logout-btn" class="btn orange darken-1 text-shadow hide-on-small-only" href="{{ url_for('logout') }}">Log out</a>
-                        </li>
-                        {% else %}
-                        <!--Login button-->
-                        <li>
-                           <a id="login-btn" class="btn orange darken-1 text-shadow hide-on-small-only" href="{{ url_for('login') }}">Log in</a>
-                        </li>
-                        {% endif %}
-                        <!-- Dropdown sidenav menu trigger -->
-                        <li>
-                           <a href="#" aria-label="menu icon" id="menu" data-target="menu-items"
-                              class="sidenav-trigger show-on-large"><i id="menu-icon" class="fas fa-bars"></i></a>
-                        </li>
-                     </ul>
-                     <!--Nav menu links-->
-                     <ul id="menu-items" class="sidenav right">
-                        <li>
-                           <a class="sidenav-close" href="{{ url_for('home') }}">Home</a>
-                        </li>
-                        <li>
-                           <a class="sidenav-close" href="#">Browse Reviews</a>
-                        </li>
-                        {% if session.user %}
-                        <li>
-                           <a class="sidenav-close" href="#">Add a Review</a>
-                        </li>
-                        {% endif %}
-                        <li>
-                           <a class="sidenav-close" href="#">Genres</a>
-                        </li>
-                        <li>
-                           <a class="sidenav-close" href="#">Platforms</a>
-                        </li>
-                        {% if session.user|lower == "admin"|lower %}
-                        <li>
-                           <a class="sidenav-close" href="#">Add Genre</a>
-                        </li>
-                        <li>
-                           <a class="sidenav-close" href="#">Add Platform</a>
-                        </li>
-                        {% endif %}
-                        {% if session.user %}
-                         <!--Logout Mobile-->
-                        <li>
-                           <a id="logout_mob" class="sidenav-close show-on-small" href="{{ url_for('logout') }}">Log Out</a>
-                        </li>
-                        {% else %}
-                          <!--Login Mobile-->
-                        <li>
-                           <a id="login_mob" class="sidenav-close show-on-small" href="{{ url_for('login') }}">Log In</a>
-                        </li>
-                        {% endif %}
-                        <li>
-                           <a class="sidenav-close" href="{{ url_for('create_account') }}">Create Account</a>
-                        </li>               
-                     </ul>
+        <nav class="nav-extended row grey darken-2">
+             <div class="container col s12 m8 offset-m2">
+                <div class="nav-wrapper">
+                    <a href="{{ url_for('home') }}" class="brand-logo text-shadow left">u<span>Review</span>&gt;<span>&gt;</span>&gt;</a>
+                    <!-- Navbar buttons -->
+                        <ul class="nav-btns right">
+                            
+                            {% if session.user %}
+                            <!--Logout button-->
+                            <li>
+                            <a id="logout-btn" class="btn orange darken-1 text-shadow hide-on-small-only" href="{{ url_for('logout') }}">Log out</a>
+                            </li>
+                            {% else %}
+                            <!--Login button-->
+                            <li>
+                            <a id="login-btn" class="btn orange darken-1 text-shadow hide-on-small-only" href="{{ url_for('login') }}">Log in</a>
+                            </li>
+                            {% endif %}
+                            <!-- Dropdown sidenav menu trigger -->
+                            <li>
+                            <a href="#" aria-label="menu icon" id="menu" data-target="menu-items"
+                                class="sidenav-trigger show-on-large"><i id="menu-icon" class="fas fa-bars"></i></a>
+                            </li>
+                        </ul>
+                        <!--Nav menu links-->
+                        <ul id="menu-items" class="sidenav right">
+                            <li>
+                                <a class="sidenav-close" href="{{ url_for('home') }}">Home</a>
+                            </li>
+                            <li>
+                                <a class="sidenav-close" href="#">Browse Reviews</a>
+                            </li>
+                            {% if session.user %}
+                            <li>
+                                <a class="sidenav-close" href="#">Add a Review</a>
+                            </li>
+                            {% endif %}
+                            <li>
+                                <a class="sidenav-close" href="#">Genres</a>
+                            </li>
+                            <li>
+                                <a class="sidenav-close" href="#">Platforms</a>
+                            </li>
+                            {% if session.user|lower == "admin"|lower %}
+                            <li>
+                                <a class="sidenav-close" href="#">Add Genre</a>
+                            </li>
+                            <li>
+                                <a class="sidenav-close" href="#">Add Platform</a>
+                            </li>
+                            {% endif %}
+                            <li>
+                                <a class="sidenav-close" href="{{ url_for('create_account') }}">Create Account</a>
+                            </li>
+                            {% if session.user %}
+                            <!--Logout Mobile-->
+                            <li>
+                                <a id="logout_mob" class="sidenav-close show-on-small" href="{{ url_for('logout') }}">Log Out</a>
+                            </li>
+                            {% else %}
+                            <!--Login Mobile-->
+                            <li>
+                                <a id="login_mob" class="sidenav-close show-on-small" href="{{ url_for('login') }}">Log In</a>
+                            </li>
+                            {% endif %}                                   
+                        </ul>
+                </div>
             </div>
         </nav>
       

@@ -19,12 +19,20 @@ main {
     max-width: initial;
 }
 
-.flashes h4 {
-    line-height: 2;
-}
-
 .text-shadow {
     text-shadow: 1px 1px 1px rgba(20, 20, 20, 0.5);
+}
+/*-------------------------------------------------------Flashes*/
+.row.flashes, .flashes h3 {
+    margin: 0;
+}
+
+.flashes h3 {
+    font-family: "Orbitron";
+    font-weight: 500;
+    font-size: 25px;
+    color: #fafafa; 
+    line-height: 3;
 }
 
 /*-------------------------------------------------------Navbar*/
@@ -36,8 +44,8 @@ main {
     color: #fb8c00;
 }
 
-#login_mob, #logout_mob {
-    display: none;
+.nav-extended.row {
+    margin-bottom: 0;
 }
 /*----------------------------------------------------Homepage*/
 
@@ -51,15 +59,24 @@ main {
     flex-direction: column;
 }
 
+.row.overlay {
+    margin:0;
+}
+
 .overlay-text h4 {
     font-family: "Orbitron", sans-serif;
     font-weight: 400; 
     color: #3d3b3b;
 }
 
+.overlay-btn {
+    display: none;
+}
+
 .callout-btns {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    padding: 25px;
 }
 .btn-flat {
     font-family: "Orbitron", sans-serif;
@@ -71,11 +88,10 @@ main {
 .overlay-text {
    background-color: #fb8c00;
    border-radius: 6px;
-   padding: 8px;
+   padding: 25px;
    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
    opacity: 98%;
-   top: 45%;
-   left: 3%;
+   top: 35%;    
 }
 
 /*--------------------------------About Card*/
@@ -117,12 +133,33 @@ main {
 
 
 /*--------------------------------Media-Queries*/
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width:601px) {
     .callout {
         position: relative;
     }
     
     .overlay-text {
         position: absolute;
+        top: 25%;
+    }
+
+}
+
+@media only screen and (min-width: 1096x) {
+    .callout {
+        position: relative;
+    }
+    
+    .overlay-text {
+        position: absolute; 
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #login_mob, #logout_mob {
+        display: none;
     }
 }
