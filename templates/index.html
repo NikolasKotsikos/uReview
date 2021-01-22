@@ -10,13 +10,13 @@
         <h4 class="flow-text">Got and opinion or want one?</h4>
         <h4 class="flow-text">Browse reviews or add one yourself!</h4>
         <div class="callout-btns">
-            <a class="waves-effect waves-grey btn-flat flow-text grey darken-2"
+            <a class="waves-effect waves-grey btn-flat flow-text grey darken-2 "
                 href="{{ url_for('get_reviews') }}">Browse Reviews</a>
             {% if session.user %}
-            <a class="waves-effect waves-grey btn-flat flow-text grey darken-2" href="#">Add a Review
+            <a class="waves-effect waves-grey btn-flat flow-text grey darken-2 hide-on-small-only" href="#">Add a Review
                 <i class="material-icons">add_circle_outline</i></a>
             {% else %}
-            <a class="waves-effect waves-grey btn-flat flow-text grey darken-2"
+            <a class="waves-effect waves-grey btn-flat flow-text grey darken-2 hide-on-small-only"
                 href="{{ url_for('create_account') }}">Create Account</a>
             {% endif %}
         </div>
