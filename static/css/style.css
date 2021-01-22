@@ -133,7 +133,7 @@ main {
 
 
 /*--------------------------------Media-Queries*/
-@media only screen and (min-width:601px) {
+@media only screen and (min-width:601) {
     .callout {
         position: relative;
     }
@@ -143,9 +143,17 @@ main {
         top: 25%;
     }
 
+     #login_mob, #logout_mob {
+        display: none;
+    }
+
+    .overlay-btn {
+        display: none;
+    }
+
 }
 
-@media only screen and (min-width: 1096x) {
+@media only screen and (min-width: 993px) {
     .callout {
         position: relative;
     }

@@ -7,16 +7,16 @@
             src="{{ url_for('static', filename='assets/images/hero-img.png') }}" alt="hero image" />
     </div>
     <div class="row overlay">
-        <div class="col s12 m8 l4 offset-l2 offset-m2 overlay-text center-align">
+        <div class="col s12 m8 l4 xl3 offset-l2 offset-m2 offset-xl2 overlay-text center-align">
             <h4 class="flow-text">Got and opinion or want one?</h4>
             <h4 class="flow-text">Browse reviews or add one yourself!</h4>
             <div class="callout-btns">
                 <a class="waves-effect waves-grey btn-flat flow-text grey darken-2 "
                     href="{{ url_for('get_reviews') }}">Find Reviews&gt;&gt;</a>
                 {% if session.user %}
-                <a class="waves-effect waves-grey btn-flat flow-text grey darken-2 overlay-btn show-on-medium-and-up" href="#">Add a Review&gt;&gt;</a>
+                <a class="waves-effect waves-grey btn-flat flow-text grey darken-2 overlay-btn show-on-large" href="#">Add a Review&gt;&gt;</a>
                 {% else %}
-                <a class="waves-effect waves-grey btn-flat flow-text grey darken-2 overlay-btn show-on-medium-and-up"
+                <a class="waves-effect waves-grey btn-flat flow-text grey darken-2 overlay-btn show-on-large"
                     href="{{ url_for('create_account') }}">Create Account&gt;&gt;</a>
                 {% endif %}
             </div>
