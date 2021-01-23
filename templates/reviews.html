@@ -1,13 +1,53 @@
 {% extends "base.html" %}
 {% block content %}    
 
-    {% for review in reviews %}
-        {{ review.review_name }}<br>
-        {{ review.genre_name }}<br>
-        {{ review.platform }}<br>
-        {{ review.dev_name }}<br>
-        {{ review.release_year }}<br>
-        {{ review.review_text }}<br>
-    {% endfor %}
+    
+        <br>
+       <br>
+       <br>
+        <br>
+        <br>
+        <br>
+    
+
+    <div class="row">
+        <div class="col s12 m7">
+        {% for review in reviews %}
+            <div class="card" id="{{ review.review_id }}">
+                <div class="card-image">
+                    <img src="images/sample-1.jpg">
+                    <span class="card-title">{{ review.review_name }}</span>
+                </div>
+                <div class="game_data">
+                    <ul class="flow-text right"> 
+                        <li>
+                            Genre: {{ review.genre_name }}
+                        </li>
+                        <li>
+                            Platform: {{ review.platform }}
+                        </li>
+                        <li>
+                            Developer: {{ review.dev_name }}
+                        </li>
+                        <li>
+                            Released: {{ review.release_year }}
+                        </li>
+                         <li>
+                            <!-- {{ review.created_by }} -->
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-content flow-text">
+                    <p>
+                        {{ review.review_text }}
+                    </p>
+                </div>
+                <div class="card-action right">
+                <a href="#">This is a link</a>
+                </div>
+        {% endfor %}
+            </div>
+        </div>
+  </div>
 
 {% endblock %}
