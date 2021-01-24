@@ -12,12 +12,12 @@
             <h4 class="flow-text">Browse reviews or add one yourself!</h4>
             <div class="callout-btns">
                 <a class="waves-effect waves-grey btn-flat flow-text grey darken-2 "
-                    href="{{ url_for('get_reviews') }}">Find Reviews&gt;&gt;</a>
+                    href="{{ url_for('get_reviews') }}">Find Reviews&gt;&gt;&gt;</a>
                 {% if session.user %}
-                <a class="waves-effect waves-grey btn-flat flow-text grey darken-2 overlay-btn show-on-large" href="#">Add a Review&gt;&gt;</a>
+                <a class="waves-effect waves-grey btn-flat flow-text grey darken-2 overlay-btn show-on-large" href="#">Add a Review&gt;&gt;&gt;</a>
                 {% else %}
                 <a class="waves-effect waves-grey btn-flat flow-text grey darken-2 overlay-btn show-on-large"
-                    href="{{ url_for('create_account') }}">Create Account&gt;&gt;</a>
+                    href="{{ url_for('create_account') }}">Create Account&gt;&gt;&gt;</a>
                 {% endif %}
             </div>
         </div>
@@ -29,10 +29,10 @@
         <div class="card-panel about">
             <h4 class="center-align flow-text orange-text text-darken-1 text-shadow">What is uReview?</h4>
             <p class="flow-text center-align">
-                Aren't you tired of reading reviews that you can't trust the reviewer's motives?
+                Aren't you tired of reading reviews that feel like company PR reports?
                 uReview features 100% user generated content, representing the honest opinions of
                 the gamers like yourself, independent of gaming platform. With respect and passion, without prejudice,
-                read reviews written from your peers, or make an account and add your own reviews!
+                read reviews written from your peers, or make an account and add some of your own!
             </p>
         </div>
     </div>
