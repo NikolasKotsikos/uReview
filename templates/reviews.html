@@ -1,45 +1,47 @@
 {% extends "base.html" %}
 {% block content %}    
     
-     {% for review in reviews %}        
-    <div class="row card-preview-container">       
-        <div class="col s12 m8 l3 offset-m2">
+           
+    <div class="row card-preview-container">
+        {% for review in reviews %}         
+        <div class="col s12 m8 l3 offset-m2 offset-l2">
            
             <div class="card card-preview" id="{{ review.review_id }}">
-                <div class="card-image">
-                    <img src="{{ review.img_url}}">
-                    <span class="card-title">{{ review.review_name }}</span>
-                </div>
-                <div class="game_data">
-                    <ul class="flow-text right"> 
-                        <li>
-                            Genre: {{ review.genre_name }}
-                        </li>
-                        <li>
-                            Platform: {{ review.platform }}
-                        </li>
-                        <li>
-                            Developer: {{ review.dev_name }}
-                        </li>
-                        <li>
-                            Released: {{ review.release_year }}
-                        </li>
-                         <li>
-                            by {{ review.created_by }}
-                        </li>
-                    </ul>
-                </div>
-                <div class="card-content flow-text">
-                    <p>
-                        {{ review.review_text }}
-                    </p>
-                </div>
-                <div class="card-action right">
-                <a href="#">This is a link</a>
-                </div>            
-            </div>
+                        <div class="card-image">
+                             <img src="{{ review.img_url}}">
+                             <span class="card-title orange-text text-darken-1 text-shadow">{{ review.review_name }}</span>
+                        </div>
+                    <div class="preview-wrapper">
+                        <div class="game-data left">
+                            <ul class="flow-text"> 
+                                <li>
+                                    Genre: {{ review.genre_name }}
+                                </li>
+                                <li>
+                                    Platform: {{ review.platform }}
+                                </li>
+                                <li class="truncate">
+                                    Developer: {{ review.dev_name }}
+                                </li>
+                                <li>
+                                    Released: {{ review.release_year }}
+                                </li>
+                            </ul>
+                        </div>
+                        <span class="created-by flow-text right">by <strong>{{ review.created_by }}</strong></span>
+                        <div class="card-content flow-text left">
+                            <p class="review-text">
+                                {{ review.review_text }}
+                            </p>                     
+                        </div>
+                        <div class="card-action right">
+                                <a href="#">Full Review</a>
+                        </div>
+                    </div>               
+            </div>                 
         </div>
-  </div>
-  {% endfor %}
+        {% endfor %}
+    </div>
+ 
 
 {% endblock %}

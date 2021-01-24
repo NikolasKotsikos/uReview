@@ -25,17 +25,17 @@
                 <div class="nav-wrapper">
                     <a href="{{ url_for('home') }}" class="brand-logo text-shadow left">u<span>Review</span>&gt;<span>&gt;</span>&gt;</a>
                     <!-- Navbar buttons -->
-                        <ul class="nav-btns right">
+                        <ul class="nav-btns flow-text right">
                             
                             {% if session.user %}
                             <!--Logout button-->
                             <li>
-                            <a id="logout-btn" class="btn orange darken-1 text-shadow show-on-large" href="{{ url_for('logout') }}">Log out</a>
+                            <a id="logout-btn" class="btn orange darken-1 text-shadow show-on-large hide-on-med-and-down" href="{{ url_for('logout') }}">Log out</a>
                             </li>
                             {% else %}
                             <!--Login button-->
                             <li>
-                            <a id="login-btn" class="btn orange darken-1 text-shadow show-on-large" href="{{ url_for('login') }}">Log in</a>
+                            <a id="login-btn" class="btn orange darken-1 text-shadow show-on-large hide-on-med-and-down" href="{{ url_for('login') }}">Log in</a>
                             </li>
                             {% endif %}
                             <!-- Dropdown sidenav menu trigger -->
@@ -59,6 +59,10 @@
                             <li>
                                 <a class="sidenav-close" href="#">Add a Review</a>
                             </li>
+                            {% else %}
+                            <li>
+                                <a class="sidenav-close" href="{{ url_for('create_account') }}">Create Account</a>
+                            </li>
                             {% endif %}
                             <li>
                                 <a class="sidenav-close" href="#">Genres</a>
@@ -74,9 +78,7 @@
                                 <a class="sidenav-close" href="#">Add Platform</a>
                             </li>
                             {% endif %}
-                            <li>
-                                <a class="sidenav-close" href="{{ url_for('create_account') }}">Create Account</a>
-                            </li>
+                            
                             {% if session.user %}
                             <!--Logout Mobile-->
                             <li>
