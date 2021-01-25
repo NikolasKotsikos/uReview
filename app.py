@@ -43,8 +43,9 @@ def create_account():
 
         else:
             create_account = {
-            "username": request.form.get("username").lower(),
-            "password": generate_password_hash(request.form.get("password"))
+                "username": request.form.get("username").lower(),
+                "password": generate_password_hash(
+                    request.form.get("password"))
             }
             mongo.db.users.insert_one(create_account)
             # put the new user into 'session' cookie
