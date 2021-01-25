@@ -2,7 +2,7 @@
 {% block content %}    
     
            
-    <div class="row">
+    <div class="row center-align reviews-container">
         {% for review in reviews %}         
         <div class="col s12 m8 l3 offset-m2 offset-l2">           
             <div class="card card-preview" id="{{ review.review_id }}">
@@ -37,7 +37,7 @@
                         
                         <div class="card-action">
                          {% if review.created_by|lower == session.user|lower %}
-                                <a href="#" class="btn-small waves-effect waves-light text-shadow left edit-btn">Edit Review <i class="fas fa-edit"></i></a>
+                                <a href="{{ url_for('edit_review', review_id=review._id) }}" class="btn darken-2 text-shadow left edit-btn">Edit Review <i class="fas fa-edit"></i></a>
                          {% endif %}
                                 <a href="#" class="light-blue-text link right"><u>Read Review</u></a>
                         </div>                                               
