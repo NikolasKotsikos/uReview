@@ -48,7 +48,7 @@ def create_account():
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash("Account created successfuly!")
-        return redirect(url_for("get_reviews"))
+        return redirect(url_for("profile", username=session["user"]))
 
     return render_template("create_account.html")
 
@@ -67,7 +67,8 @@ def login():
                         session["user"] = request.form.get("username").lower()
                         flash("Welcome, {}".format(
                             request.form.get("username")))
-                        return redirect(url_for("home"))
+                        return redirect(url_for(
+                            "profile", username=session["user"]))
 
             else:
                 # invalid password match
@@ -80,6 +81,14 @@ def login():
             return redirect(url_for("login"))
 
     return render_template("login.html")
+
+
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
+    # grab the session user's username from the database
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    return render_template("profile.html", username=username)
 
 
 @app.route("/logout")

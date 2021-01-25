@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+        <div class="row">
+            <div class="col s12 m8 l4 offset-m2 offset-l4">
+                <div class="card-panel">                    
+                    <h4 class="center-align text-shadow orange-text text-darken-1">&gt;{{ username }}'s Profile&lt;</h4>
+                    <br>
+                    <a class="waves-effect waves-grey btn-flat flow-text grey darken-2 overlay-btn show-on-large" href="#">My Reviews&gt;&gt;&gt;</a>
+                    <br>
+                    <a class="waves-effect waves-grey btn-flat flow-text grey darken-2 overlay-btn show-on-large" href="#">Add a Review&gt;&gt;&gt;</a>
+                    <br>
+                    {% if session.user|lower == "admin"|lower %}
+                    <a class="waves-effect waves-grey btn-flat flow-text grey darken-2 overlay-btn show-on-large" href="#">Add a Genre&gt;&gt;&gt;</a>
+                    <br>
+                    <a class="waves-effect waves-grey btn-flat flow-text grey darken-2 overlay-btn show-on-large" href="#">Add a Platform&gt;&gt;&gt;</a>
+                    {% endif %}                    
+                </div>
+            </div>
+        </div>
+        
+{% endblock %}

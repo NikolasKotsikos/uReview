@@ -4,14 +4,14 @@
            
     <div class="row card-preview-container">
         {% for review in reviews %}         
-        <div class="col s12 m8 l2 offset-m2">           
+        <div class="col s12 m8 l3 offset-m2">           
             <div class="card card-preview" id="{{ review.review_id }}">
                         <div class="card-image">
                              <img src="{{ review.img_url}}">
                              <span class="card-title text-darken-1 text-shadow"><u>{{ review.review_name }}</u></span>
                         </div>
                     <div class="preview-wrapper">
-                        <div class="game-data left">
+                        <div class="game-data text-shadow left">
                             <ul> 
                                 <li>
                                     Genre: <em>{{ review.genre_name }}</em>
@@ -29,14 +29,20 @@
                         </div>
                         <br>
                         <span class="created-by flow-text right">by <strong>{{ review.created_by }}</strong></span>
-                        <div class="card-content flow-text left">
+                        <div class="card-content left">
                             <p class="review-text">
                                 {{ review.review_text }}
                             </p>                     
                         </div>
+                        {% if review.created_by|lower == session.user|lower %}
+                        <div class="card-action left-align">
+                                <a href="#" class="white-text text-shadow dark-grey darken-2">Edit Review</a>
+                        </div>
+                        {% else %}
                         <div class="card-action right-align">
                                 <a href="#" class="white-text text-shadow dark-grey darken-2">Full Review</a>
                         </div>
+                        {% endif %}
                     </div>               
             </div>                 
         </div>
