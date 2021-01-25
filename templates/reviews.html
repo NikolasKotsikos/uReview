@@ -34,15 +34,13 @@
                                 {{ review.review_text }}
                             </p>                     
                         </div>
-                        {% if review.created_by|lower == session.user|lower %}
-                        <div class="card-action left-align">
-                                <a href="#" class="white-text text-shadow dark-grey darken-2">Edit Review</a>
-                        </div>
-                        {% else %}
-                        <div class="card-action right-align">
-                                <a href="#" class="white-text text-shadow dark-grey darken-2">Full Review</a>
-                        </div>
-                        {% endif %}
+                        
+                        <div class="card-action">
+                         {% if review.created_by|lower == session.user|lower %}
+                                <a href="#" class="btn-small waves-effect waves-light text-shadow left edit-btn">Edit Review <i class="fas fa-edit"></i></a>
+                         {% endif %}
+                                <a href="#" class="light-blue-text link right"><u>Read Review</u></a>
+                        </div>                                               
                     </div>               
             </div>                 
         </div>

@@ -162,21 +162,26 @@ main {
 .review-text {
     font-family: "Roboto", sans-serif;
     font-weight: 400; 
-    height: 100px;
+    height: 90px;
     overflow: hidden;
     text-overflow: ellipsis;
     padding-bottom: 10px;
 }
 
-.card-action a {
-    background-color: #3d3b3b;
+.link {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400; 
+    padding: 5px;
+    font-size: 15px;
+    
+}
+
+.btn-small {
     font-family: "Orbitron", sans-serif;
     font-weight: 400; 
+    background-color: #3d3b3b;
     border-radius: 5px;
-    padding: 5px;
-    width: 200px;
-    height: 40px;
-    font-size: 17px;
+    font-size: 12px;
 }
 
 /*--------------------------------Add Review Page*/
@@ -191,13 +196,20 @@ main {
     margin-top: 30px;
 }
 
-.card-panel h4 {
-    font-family: "Orbitron", sans-serif;
-    font-weight: 400;
-}
 .login-btn,
 .ca-btn,
-.link {
+.link,
+.card-panel h4 {
+    font-family: "Orbitron", sans-serif;
+    font-weight: 400;       
+}
+
+.login-btn, .ca-button {
+    width: 250px;
+    height: 55px;
+}
+
+.btn-wrapper, .link {
     display: grid;
     place-items: center;
 }
