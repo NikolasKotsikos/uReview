@@ -30,7 +30,7 @@
                             {% if session.user %}
                             <!--Logout button-->
                             <li>
-                            <a id="logout-btn" class="btn orange darken-1 text-shadow show-on-large hide-on-med-and-down" href="{{ url_for('logout') }}">Log out</a>
+                            <a id="logout-btn" class="btn orange darken-1 text-shadow show-on-large hide-on-med-and-down" href="{{ url_for('logout') }}">Log out {{ session["user"] }}</a>
                             </li>
                             {% else %}
                             <!--Login button-->

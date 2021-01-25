@@ -10,43 +10,35 @@
                     <!--Game Title Input-->
                         <div class="input-field col s12">
                             <i class="fas fa-heading prefix grey-text text-darken-2"></i>
-                            <input id="game_name" name="game_name" type="text" minlength="5"
+                            <input id="review_name" name="review_name" type="text" minlength="2"
                                 maxlength="25" class="validate" required>
-                            <label for="game_name">Game Title</label>
+                            <label for="review_name">Game Title</label>
                         </div>
                     </div>
                     <div class="row">
                     <!--Genre Select Field-->
                         <div class="input-field col s12">
                             <i class="fas fa-play prefix grey-text text-darken-2"></i>
-                            <select class="icons">
-                            <option value="" disabled selected>Select a Genre</option>
-                            <option value="" data-icon="images/sample-1.jpg">Action</option>
-                            <option value="" data-icon="images/office.jpg">Adventure</option>
-                            <option value="" data-icon="images/yuna.jpg">FPS</option>
-                            <option value="" data-icon="images/yuna.jpg">MMO</option>
-                            <option value="" data-icon="images/yuna.jpg">Platformer</option>
-                            <option value="" data-icon="images/yuna.jpg">RPG</option>
-                            <option value="" data-icon="images/yuna.jpg">Sports</option>
-                            <option value="" data-icon="images/yuna.jpg">Simulation</option>
-                            <option value="" data-icon="images/yuna.jpg">Other</option>                        
+                            <select id="genre_name" name="genre_name" class="icons">
+                            <option value="genre_name" disabled selected>Select a Genre</option>
+                            {% for genre in genres %}
+                            <option value="{{ genre.genre_name }}" data-icon="{{ genre.genre_img }}">{{ genre.genre_name }}</option>
+                            {% endfor %}                            
                             </select>
-                            <label>Select Genre</label>
+                            <label for="genre_name">Select a Genre</label>
                         </div>
                     </div>
                     <div class="row">
                     <!--Platform Select Field-->
                         <div class="input-field col s12">
                             <i class="fas fa-gamepad prefix grey-text text-darken-2"></i>
-                            <select class="icons">
-                            <option value="" disabled selected>Select a Platform</option>
-                            <option value="" data-icon="images/sample-1.jpg">Nintendo</option>
-                            <option value="" data-icon="images/office.jpg">PC</option>
-                            <option value="" data-icon="images/yuna.jpg">Playstation</option>
-                            <option value="" data-icon="images/yuna.jpg">XBOX</option>
-                            <option value="" data-icon="images/yuna.jpg">Other</option>
+                            <select id="platform" name="platform" class="icons">
+                            <option value="platform" disabled selected>Select a Platform</option>
+                            {% for platform in platforms %}
+                            <option value="{{ platform.platform_name }}" data-icon="{{ platform.platform_img }}">{{ platform.platform_name }}</option>
+                            {% endfor %}
                             </select>
-                            <label>Select Platform</label>
+                            <label for="platform">Select a Platform</label>
                         </div>
                     </div>
                     <div class="row">
@@ -58,7 +50,7 @@
                             <label for="dev_name">Developer/Publisher</label>
                         </div>
                     </div>
-                    <!--Release Year Picker-->
+                    <!--Release Year Input-->
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="fas fa-calendar-alt prefix grey-text text-darken-2"></i>
@@ -71,8 +63,8 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="fas fa-image prefix grey-text text-darken-2"></i>
-                            <input id="recipe_img" name="recipe_img" type="url" class="validate" required>
-                            <label for="recipe_img">Enter Image URL</label>
+                            <input id="img_url" name="img_url" minlenght="7" type="url" class="validate" required>
+                            <label for="img_url">Enter Image URL</label>
                         </div>
                     </div>
                     <!--Review Text Area-->
@@ -85,13 +77,13 @@
                         </div>
                     </div>
                     <!--Save & Cancel Buttons-->
-                    <div class="row">
-                        <button type="submit" class="col btn-large grey darken-2 left-align">
-                            Add Review <i class="fas fa-plus"></i>
+                    <div class="row right-align">
+                        <button type="submit" class="btn grey darken-2">
+                            Add Review <i class="fas fa-plus right"></i>
                         </button>
-                        <button type="submit" class="col btn-large grey darken-2 right-align">
-                            Cancel <i class="fas fa-times"></i>
-                        </button>
+                        <a class="waves-effect waves-grey btn grey darken-2"
+                        href="{{ url_for('get_reviews') }}">Cancel <i class="fas fa-times right"></i></a>
+                        
                     </div>                    
                 </div>
             </form>
