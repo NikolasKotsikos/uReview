@@ -166,6 +166,11 @@ main {
     font-size: 17px;
 }
 
+/*--------------------------------Add Review Page*/
+.card-panel.review-card {
+    height: auto;
+}
+
 /*--------------------------------Log-in & Create Account Page*/
 
 .card-panel {

@@ -57,7 +57,7 @@
                                 <a class="sidenav-close" href="{{ url_for('profile', username=session['user']) }}">Profile</a>
                             </li>
                             <li>
-                                <a class="sidenav-close" href="#">Add a Review</a>
+                                <a class="sidenav-close" href="{{ url_for('add_review') }}">Add a Review</a>
                             </li>
                             {% else %}
                             <li>

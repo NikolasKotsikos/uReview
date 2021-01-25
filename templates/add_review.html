@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% block content %}
+
+        <div class="row">
+            <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('add_review') }}">
+                <div class="card-panel review-card">                    
+                    <h4 class="center-align text-shadow orange-text text-darken-1">&gt;Add a Review&lt;</h4>
+                    <!--Add Review Form-->
+                    <div class="row">
+                    <!--Game Title Input-->
+                        <div class="input-field col s12">
+                            <i class="fas fa-heading prefix grey-text text-darken-2"></i>
+                            <input id="game_name" name="game_name" type="text" minlength="5"
+                                maxlength="25" class="validate" required>
+                            <label for="game_name">Game Title</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                    <!--Genre Select Field-->
+                        <div class="input-field col s12">
+                            <i class="fas fa-play prefix grey-text text-darken-2"></i>
+                            <select class="icons">
+                            <option value="" disabled selected>Select a Genre</option>
+                            <option value="" data-icon="images/sample-1.jpg">Action</option>
+                            <option value="" data-icon="images/office.jpg">Adventure</option>
+                            <option value="" data-icon="images/yuna.jpg">FPS</option>
+                            <option value="" data-icon="images/yuna.jpg">MMO</option>
+                            <option value="" data-icon="images/yuna.jpg">Platformer</option>
+                            <option value="" data-icon="images/yuna.jpg">RPG</option>
+                            <option value="" data-icon="images/yuna.jpg">Sports</option>
+                            <option value="" data-icon="images/yuna.jpg">Simulation</option>
+                            <option value="" data-icon="images/yuna.jpg">Other</option>                        
+                            </select>
+                            <label>Select Genre</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                    <!--Platform Select Field-->
+                        <div class="input-field col s12">
+                            <i class="fas fa-gamepad prefix grey-text text-darken-2"></i>
+                            <select class="icons">
+                            <option value="" disabled selected>Select a Platform</option>
+                            <option value="" data-icon="images/sample-1.jpg">Nintendo</option>
+                            <option value="" data-icon="images/office.jpg">PC</option>
+                            <option value="" data-icon="images/yuna.jpg">Playstation</option>
+                            <option value="" data-icon="images/yuna.jpg">XBOX</option>
+                            <option value="" data-icon="images/yuna.jpg">Other</option>
+                            </select>
+                            <label>Select Platform</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                    <!--Developer/Publisher Name Input-->
+                        <div class="input-field col s12">
+                            <i class="fas fa-signature prefix grey-text text-darken-2"></i>
+                            <input id="dev_name" name="dev_name" type="text" minlength="5"
+                                maxlength="25" class="validate" required>
+                            <label for="dev_name">Developer/Publisher</label>
+                        </div>
+                    </div>
+                    <!--Release Year Picker-->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fas fa-calendar-alt prefix grey-text text-darken-2"></i>
+                            <input id="release_year" name="release_year" type="text" minlength="4"
+                                maxlength="4" class="validate" required>
+                            <label for="release_year">Release Year</label>
+                        </div>
+                    </div>
+                    <!--Image URL Input-->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fas fa-image prefix grey-text text-darken-2"></i>
+                            <input id="recipe_img" name="recipe_img" type="url" class="validate" required>
+                            <label for="recipe_img">Enter Image URL</label>
+                        </div>
+                    </div>
+                    <!--Review Text Area-->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fas fa-pen-square prefix grey-text text-darken-2"></i>
+                            <textarea id="review_text" name="review_text" class="materialize-textarea" 
+                            minlength="250" maxlength="2000" required></textarea>
+                            <label for="review_text">Review Text</label>
+                        </div>
+                    </div>
+                    <!--Save & Cancel Buttons-->
+                    <div class="row">
+                        <button type="submit" class="col btn-large grey darken-2 left-align">
+                            Add Review <i class="fas fa-plus"></i>
+                        </button>
+                        <button type="submit" class="col btn-large grey darken-2 right-align">
+                            Cancel <i class="fas fa-times"></i>
+                        </button>
+                    </div>                    
+                </div>
+            </form>
+        </div>
+
+{% endblock %}
