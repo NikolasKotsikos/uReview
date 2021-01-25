@@ -2,9 +2,9 @@
 {% block content %}    
     
            
-    <div class="row card-preview-container">
+    <div class="row">
         {% for review in reviews %}         
-        <div class="col s12 m8 l3 offset-m2">           
+        <div class="col s12 m8 l3 offset-m2 offset-l2">           
             <div class="card card-preview" id="{{ review.review_id }}">
                         <div class="card-image">
                              <img src="{{ review.img_url}}">

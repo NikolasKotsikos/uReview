@@ -12,12 +12,12 @@
             <h4 class="flow-text">Browse reviews or add one yourself!</h4>
             <div class="callout-btns">
                 <a class="waves-effect waves-grey btn-flat flow-text grey darken-2 "
-                    href="{{ url_for('get_reviews') }}">Find Reviews&gt;&gt;&gt;</a>
+                    href="{{ url_for('get_reviews') }}">Find Reviews &gt;&gt;&gt;</a>
                 {% if session.user %}
-                <a class="waves-effect waves-grey btn-flat flow-text grey darken-2 overlay-btn show-on-large" href="{{ url_for('add_review') }}">Add a Review&gt;&gt;&gt;</a>
+                <a class="waves-effect waves-grey btn-flat flow-text grey darken-2 overlay-btn show-on-large" href="{{ url_for('add_review') }}">Add a Review &gt;&gt;&gt;</a>
                 {% else %}
                 <a class="waves-effect waves-grey btn-flat flow-text grey darken-2 overlay-btn show-on-large"
-                    href="{{ url_for('create_account') }}">Create Account&gt;&gt;&gt;</a>
+                    href="{{ url_for('create_account') }}">Create Account &gt;&gt;&gt;</a>
                 {% endif %}
             </div>
         </div>

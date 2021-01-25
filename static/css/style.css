@@ -49,6 +49,8 @@ main {
 }
 
 #login-btn, #logout-btn {
+    font-family: "Orbitron", sans-serif;
+    font-weight: 400;
     margin-top: 15px;
 }
 /*----------------------------------------------------Homepage*/
@@ -105,6 +107,17 @@ main {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     color: #616161;
+}
+/*--------------------------------User Profile Page*/
+.profile-btns {
+    font-family: "Orbitron", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;    
+}
+
+.profile-btns a {
+    margin: 15px 0;
 }
 
 /*--------------------------------Find Reviews Page*/
@@ -216,6 +229,13 @@ main {
     }
 
     .overlay-btn {
+        display: none;
+    }
+
+}
+
+@media only screen and (min-width:768px) {
+    #login_mob, #logout_mob {
         display: none;
     }
 

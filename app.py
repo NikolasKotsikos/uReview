@@ -39,16 +39,18 @@ def create_account():
 
         if existing_user:
             flash("This username is taken")
-        create_account = {
+            return redirect(url_for("create_account"))
+
+        else:
+            create_account = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password"))
-        }
-        mongo.db.users.insert_one(create_account)
-
-        # put the new user into 'session' cookie
-        session["user"] = request.form.get("username").lower()
-        flash("Account created successfuly!")
-        return redirect(url_for("profile", username=session["user"]))
+            }
+            mongo.db.users.insert_one(create_account)
+            # put the new user into 'session' cookie
+            session["user"] = request.form.get("username").lower()
+            flash("Account created successfuly!")
+            return redirect(url_for("profile", username=session["user"]))
 
     return render_template("create_account.html")
 
