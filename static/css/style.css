@@ -121,10 +121,11 @@ main {
 }
 
 /*--------------------------------Find Reviews Page*/
-.reviews-container {
+/*.reviews-container {
     width: 66%;
     margin-top: 138px;
-}
+}*/
+
 .preview-wrapper {
     display: grid;    
 }
