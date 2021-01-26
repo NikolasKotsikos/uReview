@@ -60,7 +60,7 @@ main {
 }
 
 .hero-img {
-    height: 400px;
+    height: 450px;
     width: 99vw;
     align-self: center;
 }   
@@ -128,16 +128,6 @@ main {
 }
 
 /*--------------------------------Find Reviews Page*/
-.cards-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-.cards-container .col {
-    flex-grow: 1;
-}
-
 .card {
     background-color: #fb8c00;
 }
@@ -253,7 +243,7 @@ main {
 
 
 /*--------------------------------Media-Queries*/
-@media only screen and (min-width:601px) {
+/*@media only screen and (min-width:601px) {
     .callout {
         position: relative;
     }
@@ -271,7 +261,7 @@ main {
         display: none;
     }
 
-}
+}*/
 
 @media only screen and (min-width:768px) {
     #login_mob, #logout_mob {
