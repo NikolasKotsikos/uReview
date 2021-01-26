@@ -21,12 +21,11 @@
     <header>
         <!--Top Navbar-->
         <nav class="nav-extended row grey darken-2">
-             <div class="container col s12 m8 offset-m2">
+             <div class="col s12 m8 offset-m2">
                 <div class="nav-wrapper">
                     <a href="{{ url_for('home') }}" class="brand-logo text-shadow left">u<span>Review</span>&gt;<span>&gt;</span>&gt;</a>
                     <!-- Navbar buttons -->
-                        <ul class="nav-btns flow-text right">
-                            
+                        <ul class="nav-btns flow-text right">                            
                             {% if session.user %}
                             <!--Logout button-->
                             <li>

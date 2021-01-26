@@ -1,18 +1,18 @@
 {% extends "base.html" %}
-{% block content %}    
-    
-           
-    <div class="row center-align reviews-container">
-        {% for review in reviews %}         
-        <div class="col s12 m8 l3 offset-m2 offset-l2">           
-            <div class="card card-preview" id="{{ review.review_id }}">
-                        <div class="card-image">
-                             <img src="{{ review.img_url}}">
-                             <span class="card-title text-darken-1 text-shadow"><u>{{ review.review_name }}</u></span>
-                        </div>
-                    <div class="preview-wrapper">
-                        <div class="game-data text-shadow left">
-                            <ul> 
+{% block content %}
+
+    <section class="row">
+        <div class="cards-container">
+        {% for review in reviews %}
+            <div class="col s12 m8 l5 card-preview">
+                <div class="card" id="{{ review.review_id }}">
+                    <div class="card-image">
+                        <img src="{{ review.img_url}}">
+                        <span class="card-title text-shadow"><u>{{ review.review_name }}</u></span>
+                    </div>
+                    <div class="preview-content-wrapper">
+                        <div class="game-data text-shadow">
+                            <ul>
                                 <li>
                                     Genre: <em>{{ review.genre_name }}</em>
                                 </li>
@@ -25,27 +25,33 @@
                                 <li>
                                     Released: <em>{{ review.release_year }}</em>
                                 </li>
-                            </ul>
-                        </div>
-                        <br>
-                        <span class="created-by flow-text right">by <strong>{{ review.created_by }}</strong></span>
-                        <div class="card-content left">
-                            <p class="review-text">
-                                {{ review.review_text }}
-                            </p>                     
-                        </div>
+                            </ul>                        
+                        </div>               
+                        <span class="created-by left">
+                                by <strong>{{ review.created_by }}</strong>
+                        </span>     
+                        <div class="card-content">
                         
+                            <p class="review-text">
+                                    {{ review.review_text }}
+                            </p>
+                            
+                        </div>
+
                         <div class="card-action">
-                         {% if review.created_by|lower == session.user|lower %}
-                                <a href="{{ url_for('edit_review', review_id=review._id) }}" class="btn darken-2 text-shadow left edit-btn">Edit Review <i class="fas fa-edit"></i></a>
-                         {% endif %}
-                                <a href="#" class="light-blue-text link right"><u>Read Review</u></a>
-                        </div>                                               
-                    </div>               
-            </div>                 
-        </div>
+                            {% if review.created_by|lower == session.user|lower %}
+                            <a href="{{ url_for('edit_review', review_id=review._id) }}"
+                                class="btn-small darken-2 text-shadow left edit-btn">Edit Review <i class="fas fa-edit"></i></a>
+                            {% endif %}
+                            <a href="#" class="light-blue-text link right"><u>Read Review</u></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
         {% endfor %}
-    </div>
- 
+        </div>
+    </section>
+
 
 {% endblock %}
