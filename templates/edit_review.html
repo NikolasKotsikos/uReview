@@ -85,15 +85,35 @@
                             <label for="review_text">Review Text</label>
                         </div>
                     </div>
-                    <!--Save & Cancel Buttons-->
-                    <div class="row right-align">
+                    <!--Save,Cancel & Delete Buttons-->
+                    <div class="row edit-btns">
                         <button type="submit" class="btn grey darken-2">
                             Edit Review <i class="fas fa-edit right"></i>
                         </button>
                         <a class="waves-effect waves-grey btn grey darken-2"
-                        href="{{ url_for('get_reviews') }}">Cancel <i class="fas fa-times right"></i></a>
-                        
-                    </div>                    
+                        href="{{ url_for('get_reviews') }}">Cancel <i class="fas fa-times right"></i>
+                        </a>
+                        <a class="btn-small grey darken-1 right modal-trigger"
+                        href="#del-modal">
+                        Delete <i class="fas fa-trash-alt right"></i>
+                        </a>
+                    </div> 
+                    <!--Delete Review Modal-->
+                    <div id="del-modal" class="modal col s12 m8 offset-m2 center-align">
+                        <div class="modal-content">
+                            <h3 class="red-text flow-text"><strong><i class="fas fa-exclamation-circle"></i><u>Warning : </u></strong></h3>
+                            <h3 class="red-text flow-text"><strong><i class="fas fa-exclamation-circle"></i><u>Deleting a review will remove it permanently!</u></strong></h3>
+                        </div>
+                        <div class="modal-footer modal-btns">
+                            <a class="waves-effect waves-grey btn grey darken-2 modal-close"
+                            href="#">Cancel <i class="fas fa-times right"></i>
+                            </a>
+                            <a class="btn grey darken-1"
+                            href="{{ url_for('delete_review', review_id=review._id) }}">
+                            Delete <i class="fas fa-trash-alt right"></i>
+                            </a>
+                        </div>
+                    </div>                   
                 </div>
             </form>
         </div>

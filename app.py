@@ -139,7 +139,7 @@ def edit_review(review_id):
             "created_by": session["user"]
         }
         mongo.db.reviews.update({"_id": ObjectId(review_id)}, submit)
-        flash("Review Edited Successfuly!")
+        flash("Review Edited, Changes Saved!")
 
     review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
     genres = mongo.db.genres.find().sort("genre_name", 1)
@@ -148,6 +148,13 @@ def edit_review(review_id):
                            review=review,
                            genres=genres,
                            platforms=platforms)
+
+
+@app.route("/delete_review/<review_id>")
+def delete_review(review_id):
+    mongo.db.reviews.remove({"_id": ObjectId(review_id)})
+    flash("Review Deleted Successfuly")
+    return redirect(url_for("get_reviews"))
 
 
 if __name__ == "__main__":
