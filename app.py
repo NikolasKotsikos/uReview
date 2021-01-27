@@ -157,6 +157,29 @@ def delete_review(review_id):
     return redirect(url_for("get_reviews"))
 
 
+@app.route("/get_genres")
+def get_genres():
+    genres = list(mongo.db.genres.find().sort("genre_name", 1))
+    return render_template("genres.html", genres=genres)
+
+
+@app.route("/edit_genre/<genre_id>", methods=["GET", "POST"])
+def edit_genre(genre_id):
+    if request.method == "POST":
+        submit = {
+            "genre_name": request.form.get("genre_name")
+        }
+        mongo.db.genres.update({"_id": ObjectId(genre_id)}, submit)
+        flash("Genre Edited Successfuly!")
+
+
+@app.route("/delete_genre/<genre_id>")
+def delete_genre(genre_id):
+    mongo.db.genres.remove({"_id": ObjectId(genre_id)})
+    flash("Genre Deleted")
+    return redirect(url_for("get_genres"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

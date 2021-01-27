@@ -11,7 +11,7 @@
                         <div class="input-field col s12">
                             <i class="fas fa-heading prefix grey-text text-darken-2"></i>
                             <input id="review_name" name="review_name" type="text" minlength="2"
-                                value="{{ review.review_name }}" maxlength="25" class="validate" required>
+                                value="{{ review.review_name }}" maxlength="50" class="validate" required>
                             <label for="review_name">Game Title</label>
                         </div>
                     </div>
@@ -91,18 +91,23 @@
                             Edit Review <i class="fas fa-edit right"></i>
                         </button>
                         <a class="waves-effect waves-grey btn grey darken-2"
-                        href="{{ url_for('get_reviews') }}">Cancel <i class="fas fa-times right"></i>
+                        href="{{ url_for('get_reviews') }}">
+                            Cancel <i class="fas fa-times right"></i>
                         </a>
-                        <a class="btn-small grey darken-1 right modal-trigger"
+                        <a data-target="{{ review._id }}" class="btn-small grey darken-1 right modal-trigger"
                         href="#del-modal">
-                        Delete <i class="fas fa-trash-alt right"></i>
+                            Delete <i class="fas fa-trash-alt right"></i>
                         </a>
                     </div> 
                     <!--Delete Review Modal-->
-                    <div id="del-modal" class="modal col s12 m8 offset-m2 center-align">
+                    <div id="{{ review._id }}" class="modal center-align">
                         <div class="modal-content">
-                            <h3 class="red-text flow-text"><strong><i class="fas fa-exclamation-circle"></i><u>Warning : </u></strong></h3>
-                            <h3 class="red-text flow-text"><strong><i class="fas fa-exclamation-circle"></i><u>Deleting a review will remove it permanently!</u></strong></h3>
+                            <div class="row">
+                                <div class="col s12">
+                                    <h3 class="red-text flow-text"><strong><i class="fas fa-exclamation-circle"></i><u>Warning : </u></strong></h3>
+                                    <h3 class="red-text flow-text"><strong><u>Deleting is permanent!</u></strong></h3>
+                                </div>
+                            </div>
                         </div>
                         <div class="modal-footer modal-btns">
                             <a class="waves-effect waves-grey btn grey darken-2 modal-close"

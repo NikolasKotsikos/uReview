@@ -16,6 +16,11 @@ main {
 .text-shadow {
     text-shadow: 1px 1px 1px rgba(20, 20, 20, 0.5);
 }
+
+.btn:hover, .btn-small:hover, .btn:focus, .btn-small:focus {
+    background-color: #e65100;
+}
+
 /*-------------------------------------------------------Flashes*/
 .row.flashes, .flashes h3 {
     margin: 0;
@@ -47,6 +52,7 @@ main {
     font-weight: 400;
     margin-top: 15px;
 }
+
 /*----------------------------------------------------Homepage*/
 
 /*--------------------------------Callout*/
@@ -139,8 +145,9 @@ main {
     grid-auto-flow: row;
 }
 
-.card-title {
+.card-title.review-name {
     background-color: #fb8c00;
+    padding: 15px;
     border-radius: 0 8px 0 0;
     font-family: "Orbitron", sans-serif;
     font-weight: 500;    
@@ -148,7 +155,7 @@ main {
 }
 
 .card-image img {
-    height: 220px;
+    height: 270px;
     object-fit: cover;
 }
 
@@ -178,7 +185,8 @@ main {
 .review-text {
     font-family: "Roboto", sans-serif;
     font-weight: 400; 
-    margin-top: 20px;
+    margin-top: 25px;
+    margin-left: 30px;
     height: 90px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -218,15 +226,17 @@ main {
    border-radius: 6px;
    padding: 0 10px;
    max-width: 400px;
-   text-transform: none;
-   opacity: 0.7 !important;
+   text-transform: none;   
 }
 
 .modal .modal-content {
    padding: 24px 30px 0px 30px;
 }
 
+.modal-btns .btn.grey {
+  margin-right: 13px;  
 }
+
 /*--------------------------------Log-in & Create Account Page*/
 
 .card-panel {
@@ -262,28 +272,19 @@ main {
     place-items: center;
 }
 
+/*--------------------------------Genres & Platforms Pages*/
+.genres-title {
+    font-family: "Orbitron", sans-serif;
+    font-weight: 500; 
+       
+}
+
+.card-title.genre-header {
+    font-family: "Orbitron", sans-serif;
+    font-weight: 500;       
+}
 
 /*--------------------------------Media-Queries*/
-/*@media only screen and (min-width:601px) {
-    .callout {
-        position: relative;
-    }
-   
-    .overlay-text {
-        position: absolute;
-        top: 25%;
-    }
-
-     #login_mob, #logout_mob {
-        display: none;
-    }
-
-    .overlay-btn {
-        display: none;
-    }
-
-}*/
-
 @media only screen and (min-width:768px) {
     #login_mob, #logout_mob {
         display: none;
@@ -309,6 +310,11 @@ main {
         flex-direction: column;
     }
 
+    #menu {
+    padding-right: 0;
+    margin-right: 0;
+    }
+
     .card-preview-container {
         display: flex;
         justify-content: center;
@@ -318,7 +324,15 @@ main {
         margin: 0;
     }
     
+    .card-title.review-name {
+    font-size: 18px;
+    }
+
     #login_mob, #logout_mob {
         display: none;
+    }
+
+    .modal-btns .btn.grey {
+        margin-right: 42px;  
     }
 }

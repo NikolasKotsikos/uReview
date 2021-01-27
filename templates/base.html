@@ -29,12 +29,12 @@
                             {% if session.user %}
                             <!--Logout button-->
                             <li>
-                            <a id="logout-btn" class="btn waves-effect waves-orange orange darken-1 text-shadow show-on-large hide-on-med-and-down" href="{{ url_for('logout') }}">Log out {{ session["user"] }}</a>
+                            <a id="logout-btn" class="btn orange darken-1 text-shadow show-on-large hide-on-med-and-down" href="{{ url_for('logout') }}">Log out {{ session["user"] }}</a>
                             </li>
                             {% else %}
                             <!--Login button-->
                             <li>
-                            <a id="login-btn" class="btn waves-effect waves-orange orange darken-1 text-shadow show-on-large hide-on-med-and-down" href="{{ url_for('login') }}">Log in</a>
+                            <a id="login-btn" class="btn orange darken-1 text-shadow show-on-large hide-on-med-and-down" href="{{ url_for('login') }}">Log in</a>
                             </li>
                             {% endif %}
                             <!-- Dropdown sidenav menu trigger -->
@@ -64,7 +64,7 @@
                             </li>
                             {% endif %}
                             <li>
-                                <a class="sidenav-close" href="#">Genres</a>
+                                <a class="sidenav-close" href="{{ url_for('get_genres') }}">Genres</a>
                             </li>
                             <li>
                                 <a class="sidenav-close" href="#">Platforms</a>
