@@ -167,7 +167,7 @@ def add_genre():
         flash("Genre Added Successfuly!")
         return redirect(url_for("get_genres"))
 
-    return render_template("genres.html")
+    return render_template("add_genre.html")
 
 
 @app.route("/get_genres")

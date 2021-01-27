@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div id="add_genre" class="card center-align">
+        <div class="card-content">
+            <div class="row">
+                <form method="POST" action="{{ url_for('add_genre') }}">
+                    <div class="col s12 center-align">
+                        <h4 class="genres-title text-shadow orange-text text-darken-1">&gt;Add Genre&lt;</h4>
+                        <input id="genre_name" name="genre_name" type="text" minlength="2"
+                        value="" maxlength="25" class="validate" required>
+                        <label for="genre_name">Enter Genre Name</label>
+                    </div>
+                    <div class="modal-footer modal-btns">
+                        <button type="submit" class="btn grey darken-2">
+                            Save <i class="fas fa-save right"></i>
+                        </button>
+                        <a class="waves-effect waves-grey btn grey darken-2 modal-close" href="#">
+                            Cancel <i class="fas fa-times right"></i>
+                        </a>                            
+                    </div>
+                </form>
+            </div>
+        </div>        
+    </div>
+
+
+{% endblock %}
