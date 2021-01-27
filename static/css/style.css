@@ -228,6 +228,9 @@ main {
    max-width: 400px;
    text-transform: none;   
 }
+.edit-modal {
+    height: 195px;
+}
 
 .modal .modal-content {
    padding: 24px 30px 0px 30px;
@@ -305,6 +308,10 @@ main {
         position: absolute; 
     }
 
+    .overlay-text h4 {
+        font-size: 20px;
+    }
+
     nav {
         display: flex;
         flex-direction: column;
@@ -325,7 +332,7 @@ main {
     }
     
     .card-title.review-name {
-    font-size: 18px;
+        font-size: 18px;
     }
 
     #login_mob, #logout_mob {

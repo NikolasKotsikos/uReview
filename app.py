@@ -157,6 +157,19 @@ def delete_review(review_id):
     return redirect(url_for("get_reviews"))
 
 
+@app.route("/add_genre", methods=["GET", "POST"])
+def add_genre():
+    if request.method == "POST":
+        genre = {
+            "genre_name": request.form.get("genre_name")
+        }
+        mongo.db.genres.insert_one(genre)
+        flash("Genre Added Successfuly!")
+        return redirect(url_for("get_genres"))
+
+    return render_template("genres.html")
+
+
 @app.route("/get_genres")
 def get_genres():
     genres = list(mongo.db.genres.find().sort("genre_name", 1))
