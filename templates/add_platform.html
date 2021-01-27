@@ -6,10 +6,14 @@
             <div class="row">
                 <form method="POST" action="{{ url_for('add_platform') }}">
                     <div class="col s12 center-align">
-                        <h4 class="platforms-title text-shadow orange-text text-darken-1">&gt;Add platform&lt;</h4>
+                        <h4 class="platforms-title text-shadow orange-text text-darken-1">&gt;Add Platform&lt;</h4>
                         <input id="platform_name" name="platform_name" type="text" minlength="2"
                         value="" maxlength="25" class="validate" required>
-                        <label for="platform_name">Enter platform Name</label>
+                        <label for="platform_name">Enter Platform Name</label>
+                    </div>
+                    <div class="input-field col s12">
+                            <input id="img_url" value="" name="img_url" minlenght="7" type="url" class="validate" required>
+                            <label for="img_url">Enter Image URL</label>
                     </div>
                     <div class="modal-footer modal-btns">
                         <button type="submit" class="btn grey darken-2">
