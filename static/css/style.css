@@ -276,15 +276,22 @@ main {
 }
 
 /*--------------------------------Genres & Platforms Pages*/
-.genres-title {
+.genres-title,
+.platforms-title {
     font-family: "Orbitron", sans-serif;
-    font-weight: 500; 
-       
+    font-weight: 500;        
 }
 
-.card-title.genre-header {
+.card-title.genre-header,
+.genre-container a,
+.platform-container a {
     font-family: "Orbitron", sans-serif;
     font-weight: 500;       
+}
+
+.genre-container a,
+.platform-container a {
+    margin-top: 10px;
 }
 
 /*--------------------------------Media-Queries*/

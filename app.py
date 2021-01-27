@@ -102,6 +102,7 @@ def logout():
     return redirect(url_for("login"))
 
 
+# reviews functionality
 @app.route("/add_review", methods=["GET", "POST"])
 def add_review():
     if request.method == "POST":
@@ -157,6 +158,7 @@ def delete_review(review_id):
     return redirect(url_for("get_reviews"))
 
 
+# genres functionality
 @app.route("/add_genre", methods=["GET", "POST"])
 def add_genre():
     if request.method == "POST":
@@ -197,6 +199,52 @@ def delete_genre(genre_id):
 @app.route("/find_genre/<genre_name>", methods=["GET", "POST"])
 def find_genre(genre_name):
     reviews = list(mongo.db.reviews.find({"genre_name": genre_name}))
+    return render_template("reviews.html", reviews=reviews)
+
+
+# platforms functionality
+@app.route("/add_platform", methods=["GET", "POST"])
+def add_platform():
+    if request.method == "POST":
+        platform = {
+            "platform_name": request.form.get("platform_name"),
+            "img_url": request.form.get("img_url")
+        }
+        mongo.db.genres.insert_one(platform)
+        flash("Platform Added Successfuly!")
+        return redirect(url_for("get_platforms"))
+
+    return render_template("add_platform.html")
+
+
+@app.route("/get_platforms")
+def get_platforms():
+    platforms = list(mongo.db.platforms.find().sort("platform_name", 1))
+    return render_template("platforms.html", platforms=platforms)
+
+
+@app.route("/edit_platform/<platform_id>", methods=["GET", "POST"])
+def edit_platform(platform_id):
+    if request.method == "POST":
+        submit = {
+            "platform_name": request.form.get("platform_name"),
+            "img_url": request.form.get("img_url")
+        }
+        mongo.db.platforms.update({"_id": ObjectId(platform_id)}, submit)
+        flash("Platform Edited Successfuly!")
+        return redirect(url_for("get_platforms"))
+
+
+@app.route("/delete_platform/<platform_id>")
+def delete_platform(platform_id):
+    mongo.db.platforms.remove({"_id": ObjectId(platform_id)})
+    flash("Platform Deleted")
+    return redirect(url_for("get_platforms"))
+
+
+@app.route("/find_platform/<platform_name>", methods=["GET", "POST"])
+def find_platform(platform_name):
+    reviews = list(mongo.db.reviews.find({"platform_name": platform_name}))
     return render_template("reviews.html", reviews=reviews)
 
 

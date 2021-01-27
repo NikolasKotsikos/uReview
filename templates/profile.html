@@ -15,7 +15,7 @@
                     {% if session.user|lower == "admin"|lower %}
                     <a class="center-align waves-effect waves-grey btn grey darken-2" href="{{ url_for('get_genres') }}">Manage Genres &gt;&gt;&gt;</a>
                     
-                    <a class="center-align waves-effect waves-grey btn grey darken-2" href="#">Manage Platforms &gt;&gt;&gt;</a>
+                    <a class="center-align waves-effect waves-grey btn grey darken-2" href="{{ url_for('get_platforms') }}">Manage Platforms &gt;&gt;&gt;</a>
                     {% endif %}                    
                 </div>
             </div>
