@@ -11,8 +11,8 @@
     {% for genre in genres %}
        <div class="col s12 m3">
            <div class="card blue-grey darken-1">
-               <div class="card-content center-align orange-text text-darken-1">
-                   <span class="card-title genre-header">{{ genre.genre_name }}</span>
+               <div class="card-content center-align">
+                   <span class="card-title genre-header"><a class="orange-text text-darken-1" href="{{ url_for('find_genre', genre_name=genre.genre_name) }}">{{ genre.genre_name }}</a></span>
                </div>
                {% if session.user|lower == "admin"|lower %}
                <div class="card-action">
@@ -37,14 +37,17 @@
                                     <div class="col s12">
                                         <input id="genre_name" name="genre_name" type="text" minlength="2"
                                             value="{{ genre.genre_name }}" maxlength="25" class="validate" required>
-                                    <label for="genre_name">Genre Name</label>
+                                        <label for="genre_name">Genre Name</label>
                                     </div>
                                 </form>
                             </div>
                         </div>
                         <div class="modal-footer modal-btns">
-                            <button type="submit" class="btn grey darken-2 modal-close">
-                            Done <i class="fas fa-check right"></i>
+                            <a class="waves-effect waves-grey btn grey darken-2 modal-close" href="#">
+                                Cancel <i class="fas fa-times right"></i>
+                            </a>
+                            <button type="submit" class="btn grey darken-2">
+                                Save <i class="fas fa-save right"></i>
                             </button>
                         </div>
                     </div>

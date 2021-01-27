@@ -171,6 +171,7 @@ def edit_genre(genre_id):
         }
         mongo.db.genres.update({"_id": ObjectId(genre_id)}, submit)
         flash("Genre Edited Successfuly!")
+        return redirect(url_for("get_genres"))
 
 
 @app.route("/delete_genre/<genre_id>")
@@ -178,6 +179,12 @@ def delete_genre(genre_id):
     mongo.db.genres.remove({"_id": ObjectId(genre_id)})
     flash("Genre Deleted")
     return redirect(url_for("get_genres"))
+
+
+@app.route("/find_genre/<genre_name>", methods=["GET", "POST"])
+def find_genre(genre_name):
+    reviews = list(mongo.db.reviews.find({"genre_name": genre_name}))
+    return render_template("reviews.html", reviews=reviews)
 
 
 if __name__ == "__main__":

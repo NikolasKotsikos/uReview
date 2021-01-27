@@ -81,14 +81,14 @@
                             <i class="fas fa-pen-square prefix grey-text text-darken-2"></i>
                             <textarea id="review_text" name="review_text" class="materialize-textarea" 
                             minlength="250" maxlength="2000" required>
-                            {{ review.review_text }}</textarea>
+                                {{ review.review_text }}</textarea>
                             <label for="review_text">Review Text</label>
                         </div>
                     </div>
                     <!--Save,Cancel & Delete Buttons-->
                     <div class="row edit-btns">
                         <button type="submit" class="btn grey darken-2">
-                            Edit Review <i class="fas fa-edit right"></i>
+                            Save <i class="fas fa-save right"></i>
                         </button>
                         <a class="waves-effect waves-grey btn grey darken-2"
                         href="{{ url_for('get_reviews') }}">
@@ -111,11 +111,12 @@
                         </div>
                         <div class="modal-footer modal-btns">
                             <a class="waves-effect waves-grey btn grey darken-2 modal-close"
-                            href="#">Cancel <i class="fas fa-times right"></i>
+                            href="#">
+                                Cancel <i class="fas fa-times right"></i>
                             </a>
                             <a class="btn grey darken-1"
                             href="{{ url_for('delete_review', review_id=review._id) }}">
-                            Delete <i class="fas fa-trash-alt right"></i>
+                                Delete <i class="fas fa-trash-alt right"></i>
                             </a>
                         </div>
                     </div>                   
