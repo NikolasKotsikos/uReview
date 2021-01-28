@@ -177,6 +177,12 @@ def read_review(review_id):
     return render_template("read_review.html", review=review)
 
 
+@app.route("/my_reviews")
+def my_reviews():
+    reviews = list(mongo.db.reviews.find({"created_by": session["user"]}))
+    return render_template("my_reviews.html", reviews=reviews)
+
+
 # genres functionality
 @app.route("/add_genre", methods=["GET", "POST"])
 def add_genre():

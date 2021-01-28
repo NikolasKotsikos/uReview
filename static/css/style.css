@@ -281,18 +281,25 @@ main {
 
 .review-data {
     font-weight: 500;
-    font-size: calc(13px + (15 - 13) * ((100vw - 300px) / (1600 - 300))); 
+    font-size: calc(14px + (16 - 14) * ((100vw - 300px) / (1600 - 300))); 
 }
 
 .row .card>img {
     object-fit: cover;
     width: 100%;
+    height: auto;
 
+}
+
+.review-by {
+    font-weight:400;
+    font-size: calc(14px + (16 - 14) * ((100vw - 300px) / (1600 - 300))); 
 }
 
 .review-data ul {
     margin-left: 20px;
 }
+
 .card .card-content p.full-review-text {
     font-family: "Roboto", sans-serif;
     font-weight: 400; 
