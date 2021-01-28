@@ -269,7 +269,7 @@ def delete_platform(platform_id):
 
 @app.route("/find_platform/<platform_name>", methods=["GET", "POST"])
 def find_platform(platform_name):
-    reviews = list(mongo.db.reviews.find({"platform_name": platform_name}))
+    reviews = list(mongo.db.reviews.find({"platform": platform_name}))
     return render_template("reviews.html", reviews=reviews)
 
 
