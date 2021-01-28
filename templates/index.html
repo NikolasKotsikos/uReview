@@ -36,9 +36,23 @@
         </p>
     </div>
 </section>
-
-<section class="row">
-    
+<!--Genres Carousel-->
+<section class="carousel-wrapper">
+    <h4 class="center-align carousel-title orange-text text-darken-1 text-shadow">&gt;Find Reviews by Genre&lt;</h4>
+    <div class="carousel">
+        {% for genre in genres %}
+        <a class="carousel-item" href="{{ url_for('find_genre', genre_name=genre.genre_name) }}">
+         <img
+            class="carousel-img" loading="lazy"
+            src="{{ url_for('static', filename='assets/images/square.png') }}"
+            alt="Genre image"/>
+         <p>{{ genres.genre_name }}</p>
+        </a>
+        {% endfor %}
+    </div>
+</section>
+<!--Homepage Search-->
+<section class="row">    
     <div class="col s12 m8 card-panel offset-m2 search-card">
         <h4 class="page-title text-shadow orange-text text-darken-1 center-align">&gt;Keyword Search&lt;</h4>
         <form action="{{ url_for('search') }}" method="POST" class="col s12">

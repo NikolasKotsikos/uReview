@@ -128,7 +128,8 @@ main {
     height: min-content;
 }
 
-.card-panel h4 {
+.card-panel h4,
+.carousel-outer.carousel-title {
     font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
 }
 
@@ -137,6 +138,42 @@ main {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     color: #616161;
+}
+
+/*--------------------------About Card*/
+.carousel-outer {
+   width: 85%;
+   margin: auto;
+   margin-top: 10%;
+}
+
+.carousel {
+   height: 360px;
+   top: -80px;
+}
+
+.carousel-img {
+   border-radius: 50%;
+   opacity: 0.85;
+}
+
+.carousel .carousel-item>img {
+   height: inherit;
+   object-fit: cover;
+}
+
+.carousel-item p {
+   color: #616161;
+   font-weight: 500;
+   background-color: transparent;
+   opacity: 0.85;
+   padding: 5px 10px 5px 10px;
+   border-radius: 6px;
+   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
 }
 
 /*--------------------------------User Profile Page*/

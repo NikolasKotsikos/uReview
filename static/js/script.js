@@ -1,7 +1,9 @@
 $(document).ready(function () {
     $('.sidenav').sidenav({ edge: "right" });
     $('select').formSelect(); 
-    $('.modal').modal();  
+    $('.modal').modal();
+    $('.carousel').carousel();
+    $('.carousel-slider').slider({full_width: true});  
     $('.tooltipped').tooltip(); 
 
     validateMaterializeSelect();

@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="row">
-
+    <!--Title-->
     <h4 class="page-title text-shadow orange-text text-darken-1 center-align">&gt;Reviews&lt;</h4>   
-  
+    <!--Search Bar-->
     <div class="row card-panel m8 offset-m2 search-card">
         <form action="{{ url_for('search') }}" method="POST" class="col s12">
             <div class="row valign-wrapper center-align">
@@ -20,6 +20,8 @@
         </form>
     </div>   
 </div>
+<!--Review Preview Cards-->
+{% if reviews|length > 0 %}
 <section class="row">
     <div class="cards-container">
         {% for review in reviews %}
@@ -97,6 +99,8 @@
         {% endfor %}
     </div>
 </section>
-
+{% else %}
+<h4 class="no-results text-shadow orange-text text-darken-1 center-align">No reviews found matching keyword(s)!</h4>
+{% endif %}
 
 {% endblock %}
