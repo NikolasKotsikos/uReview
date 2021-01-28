@@ -5,10 +5,10 @@
         <div class="card-content">
             <div class="row">
                 <form method="POST" action="{{ url_for('add_genre') }}">
-                    <div class="col s12 center-align">
-                        <h4 class="genres-title text-shadow orange-text text-darken-1">&gt;Add Genre&lt;</h4>
+                    <h4 class="genres-title text-shadow orange-text text-darken-1">&gt;Add Genre&lt;</h4>
+                    <div class="input-field col s12 center-align">
                         <input id="genre_name" name="genre_name" type="text" minlength="2"
-                        value="" maxlength="25" class="validate" required>
+                        maxlength="25" class="validate" required>
                         <label for="genre_name">Enter Genre Name</label>
                     </div>
                     <div class="modal-footer modal-btns">

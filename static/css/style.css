@@ -21,6 +21,16 @@ main {
     background-color: #e65100;
 }
 
+.btn, 
+.btn-small,
+.btn-large,
+.ca-btn, 
+.btn-flat,
+.edit-btn {
+    font-family: "Orbitron", sans-serif;
+    font-weight: 400;    
+}
+
 /*-------------------------------------------------------Flashes*/
 .row.flashes, .flashes h3 {
     margin: 0;
@@ -48,9 +58,7 @@ main {
 }
 
 #login-btn, #logout-btn {
-    font-family: "Orbitron", sans-serif;
-    font-weight: 400;
-    margin-top: 15px;
+   margin-top: 15px;
 }
 
 /*----------------------------------------------------Homepage*/
@@ -94,7 +102,6 @@ main {
     padding: 25px;
 }
 .btn-flat {
-    font-family: "Orbitron", sans-serif;
     font-weight: 400;
     color: #fafafa;
     border-radius: 5px;
@@ -202,8 +209,6 @@ main {
 }
 
 .btn-small, .edit-btn {
-    font-family: "Orbitron", sans-serif;
-    font-weight: 400; 
     background-color: #3d3b3b;
     border-radius: 5px;
     font-size: 12px;
@@ -279,7 +284,8 @@ main {
 .genres-title,
 .platforms-title {
     font-family: "Orbitron", sans-serif;
-    font-weight: 500;        
+    font-weight: 500;   
+    font-size: 31px;     
 }
 
 .card-title.genre-header,

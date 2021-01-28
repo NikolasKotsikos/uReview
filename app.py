@@ -210,7 +210,7 @@ def add_platform():
             "platform_name": request.form.get("platform_name"),
             "img_url": request.form.get("img_url")
         }
-        mongo.db.genres.insert_one(platform)
+        mongo.db.platforms.insert_one(platform)
         flash("Platform Added Successfuly!")
         return redirect(url_for("get_platforms"))
 
