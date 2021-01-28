@@ -2,11 +2,51 @@
 {% block content %}
 <section class="container review-page">
     <div class="row">
-        <div class="card col s12">
-            <div class="review_img">
-                <img loading="lazy" src="{{ review.img_url }}" alt="{{ review.review_name }} image">
-                <span class="card-title review-name text-shadow">&gt;{{ review.review_name }}&lt;</span>
-            </div>            
+        <div class="card s12">
+
+            <img loading="lazy" src="{{ review.img_url }}" alt="{{ review.review_name }} image">                
+            
+            <div class="review-data">
+                <h3 class="review-name white-text text-darke-1 text-shadow">&gt;{{ review.review_name }}&lt;</h3>
+                <ul class="white-text text-shadow">
+                    <li>
+                        Genre: <em>{{ review.genre_name }}</em>
+                    </li>
+                    <li>
+                        Platform: <em>{{ review.platform }}</em>
+                    </li>
+                    <li>
+                        Developer: <em>{{ review.dev_name }}</em>
+                    </li>
+                    <li>
+                        Released: <em>{{ review.release_year }}</em>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-content">
+                <h5 class="review-by text-shadow">
+                    by <strong>{{ review.created_by }}</strong>
+                </h5>
+                <p class="full-review-text">
+                    {{ review.review_text }}
+                </p>
+            </div> 
+            <div class="card-action review-btns">
+                        <a href="{{ url_for('get_reviews') }}"
+                            class="btn-small darken-2 text-shadow left edit-btn">Reviews<i
+                                class="fas fa-undo-alt"></i></a>
+                        {% if review.created_by|lower == session.user|lower %}
+                        <a href="{{ url_for('edit_review', review_id=review._id) }}"
+                            class="btn-small darken-2 text-shadow left edit-btn">Edit Review <i
+                                class="fas fa-edit"></i></a>
+                        {% endif %}
+                        {% if session.user|lower == "admin"|lower %}
+                        <a data-target="{{ review._id }}" class="btn-small grey darken-1 right modal-trigger"
+                            href="#del-modal">
+                            Delete <i class="fas fa-trash-alt left"></i>
+                        </a>
+                        {% endif %}                        
+            </div>          
         </div>
     </div>
         

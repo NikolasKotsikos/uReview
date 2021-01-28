@@ -26,12 +26,6 @@ def home():
     return render_template("index.html", genres=genres, platforms=platforms)
 
 
-@app.route("/get_reviews")
-def get_reviews():
-    reviews = list(mongo.db.reviews.find())
-    return render_template("reviews.html", reviews=reviews)
-
-
 # search functionality
 @app.route("/search", methods=["GET", "POST"])
 def search():
@@ -40,6 +34,7 @@ def search():
     return render_template("reviews.html", reviews=reviews)
 
 
+# create account functionality
 @app.route("/create_account", methods=["GET", "POST"])
 def create_account():
     if request.method == "POST":
@@ -97,14 +92,6 @@ def login():
     return render_template("login.html")
 
 
-@app.route("/profile/<username>", methods=["GET", "POST"])
-def profile(username):
-    # grab the session user's username from the database
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-    return render_template("profile.html", username=username)
-
-
 @app.route("/logout")
 def logout():
     # remove user from session cookies
@@ -113,7 +100,22 @@ def logout():
     return redirect(url_for("login"))
 
 
+# profile page functionality
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
+    # grab the session user's username from the database
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    return render_template("profile.html", username=username)
+
+
 # reviews functionality
+@app.route("/get_reviews")
+def get_reviews():
+    reviews = list(mongo.db.reviews.find())
+    return render_template("reviews.html", reviews=reviews)
+
+
 @app.route("/add_review", methods=["GET", "POST"])
 def add_review():
     if request.method == "POST":
@@ -167,6 +169,12 @@ def delete_review(review_id):
     mongo.db.reviews.remove({"_id": ObjectId(review_id)})
     flash("Review Deleted Successfuly")
     return redirect(url_for("get_reviews"))
+
+
+@app.route("/read_review/<review_id>", methods=["GET"])
+def read_review(review_id):
+    review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
+    return render_template("read_review.html", review=review)
 
 
 # genres functionality

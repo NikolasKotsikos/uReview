@@ -247,7 +247,7 @@ main {
     padding: 7px;
 }
 
-.card .card-content p{
+.card .card-content p {
     font-family: "Roboto", sans-serif;
     font-weight: 400; 
     margin-top: 15px;
@@ -271,6 +271,38 @@ main {
     border-radius: 5px;
     font-size: 12px;
 }
+/*--------------------------------Read Review Page*/
+.review-name {
+    font-family: "Orbitron", sans-serif;
+    font-weight: 500;
+    font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));;
+    margin-left: 20px;
+}
+
+.review-data {
+    font-weight: 500;
+    font-size: calc(13px + (15 - 13) * ((100vw - 300px) / (1600 - 300))); 
+}
+
+.row .card>img {
+    object-fit: cover;
+    width: 100%;
+
+}
+
+.review-data ul {
+    margin-left: 20px;
+}
+.card .card-content p.full-review-text {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400; 
+    font-size: calc(13px + (15 - 13) * ((100vw - 300px) / (1600 - 300)));
+    height: auto;
+    margin-top: 15px;
+    margin-left: 30px;
+    padding-bottom: 10px;
+}
+
 
 /*--------------------------------Add Review Page*/
 .card-panel.review-card {

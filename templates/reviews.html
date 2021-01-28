@@ -56,7 +56,7 @@
                         <p class="review-text">
                             {{ review.review_text }}
                         </p>
-                        <a href="#" class="light-blue-text link right"><u>Read Review</u></a>
+                        <a href="{{ url_for('read_review', review_id=review._id) }}" class="light-blue-text link right"><u>Read Review</u></a>
                     </div>
 
                     <div class="card-action">
