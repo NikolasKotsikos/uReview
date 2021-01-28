@@ -18,9 +18,11 @@
                 </div>
             </div>
         </form>
+        {% if session.user %}
         <a class="col s12 m4 waves-effect waves-grey btn grey darken-2" href="{{ url_for('add_review') }}">
             Add Review <i class="fas fa-plus right"></i>
         </a>
+        {% endif %}
     </div>   
 </div>
 <!--Review Preview Cards-->
