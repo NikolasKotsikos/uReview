@@ -1,6 +1,25 @@
 {% extends "base.html" %}
 {% block content %}
-
+<div class="row">
+    
+    <h4 class="page-title text-shadow orange-text text-darken-1 center-align">&gt;Reviews&lt;</h4>   
+  
+    <div class="row card-panel m8 offset-m2 search-card">
+        <form action="{{ url_for('search') }}" method="POST" class="col s12">
+            <div class="row valign-wrapper center-align">
+                <div class="input-field col s12 m8">
+                    <i class="fas fa-search prefix"></i>
+                    <input type="text" name="query" id="query" minlength="3" class="validate" required>
+                    <label for="query">Search reviews by name, developer, release year etc.</label>
+                </div>
+                <div class="col s12 m4">
+                    <a href="{{ url_for('get_reviews') }}" class="red btn text-shadow"><i class="fas fa-undo-alt"></i></a>
+                    <button type="submit" class="green btn text-shadow"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </form>
+    </div>   
+</div>
 <section class="row">
     <div class="cards-container">
         {% for review in reviews %}

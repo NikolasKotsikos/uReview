@@ -30,6 +30,14 @@ def get_reviews():
     return render_template("reviews.html", reviews=reviews)
 
 
+# search functionality
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    reviews = list(mongo.db.reviews.find({"$text": {"$search": query}}))
+    return render_template("reviews.html", reviews=reviews)
+
+
 @app.route("/create_account", methods=["GET", "POST"])
 def create_account():
     if request.method == "POST":
@@ -56,6 +64,7 @@ def create_account():
     return render_template("create_account.html")
 
 
+# login-logout functionality
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":

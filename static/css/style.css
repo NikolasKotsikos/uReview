@@ -31,6 +31,12 @@ main {
     font-weight: 400;    
 }
 
+.page-title {
+    font-family: "Orbitron", sans-serif;
+    font-weight: 500;   
+    font-size: 31px;     
+}
+
 /*-------------------------------------------------------Flashes*/
 .row.flashes, .flashes h3 {
     margin: 0;
@@ -144,6 +150,7 @@ main {
 .card {
     background-color: #fb8c00;
 }
+
 .card-preview {
     display: grid;
     justify-content: center;
@@ -247,7 +254,7 @@ main {
 
 /*--------------------------------Log-in & Create Account Page*/
 
-.card-panel {
+.card-panel:not(.search-card, .review-card) {
     height: 32em;
     margin-top: 30px;
 }
@@ -281,12 +288,6 @@ main {
 }
 
 /*--------------------------------Genres & Platforms Pages*/
-.genres-title,
-.platforms-title {
-    font-family: "Orbitron", sans-serif;
-    font-weight: 500;   
-    font-size: 31px;     
-}
 
 .card-title.genre-header,
 .genre-container a,
