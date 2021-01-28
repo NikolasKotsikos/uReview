@@ -291,6 +291,10 @@ main {
 
 }
 
+ .card-action.review-btns a{
+        margin-left: 2.5px;
+    }
+
 .review-by {
     font-weight:400;
     font-size: calc(14px + (16 - 14) * ((100vw - 300px) / (1600 - 300))); 
@@ -423,6 +427,10 @@ main {
     .card-preview-container {
         display: flex;
         justify-content: center;
+    }
+
+    .card-action.review-btns a{
+        margin-left: 20px;
     }
 
     .card-preview-container .col.l3 {
