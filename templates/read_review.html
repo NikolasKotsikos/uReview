@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="container review-page">
+    <div class="row">
+        <div class="card col s12">
+            <div class="review_img">
+                <img loading="lazy" src="{{ review.img_url }}" alt="{{ review.review_name }} image">
+                <span class="card-title review-name text-shadow">&gt;{{ review.review_name }}&lt;</span>
+            </div>            
+        </div>
+    </div>
+        
+        
+
+
+
+
+
+</section>
+
+{% endblock%}

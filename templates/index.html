@@ -9,8 +9,8 @@
 
     <div class="row overlay">
         <div class="col s12 offset-l2 offset-m2 overlay-text center-align">
-            <h4 class="white-text text-shadow">Got an opinion to share or want one?</h4>
-            <h4 class="white-text text-shadow">Browse reviews or add one yourself!</h4>
+            <h4 class="white-text text-shadow">Need honest videogame reviews?</h4>
+            <h4 class="white-text text-shadow">Browse user created reviews or add one yourself!</h4>
             <div class="callout-btns">
                 <a class="waves-effect waves-grey btn-flat flow-text grey darken-2 "
                     href="{{ url_for('get_reviews') }}">Reviews &gt;&gt;&gt;</a>
@@ -46,7 +46,21 @@
             class="carousel-img" loading="lazy"
             src="{{ url_for('static', filename='assets/images/square.png') }}"
             alt="Genre image"/>
-         <p>{{ genres.genre_name }}</p>
+         <p>{{ genre.genre_name }}</p>
+        </a>
+        {% endfor %}
+    </div>
+</section>
+<!--Platforms Carousel-->
+<section class="carousel-wrapper">
+    <h4 class="center-align carousel-title orange-text text-darken-1 text-shadow">&gt;Find Reviews by Platform&lt;</h4>
+    <div class="carousel">
+        {% for platform in platforms %}
+        <a class="carousel-item" href="{{ url_for('find_platform', platform_name=platform.platform_name) }}">
+         <img
+            class="carousel-img2" loading="lazy"
+            src="{{ platform.img_url}}"
+            alt="{{ platform.platform_name }} image"/>         
         </a>
         {% endfor %}
     </div>
@@ -60,7 +74,7 @@
                 <div class="input-field col s12 m8">
                     <i class="fas fa-search prefix"></i>
                     <input type="text" name="query" id="query" minlength="3" class="validate" required>
-                    <label for="query">Search reviews</label>
+                    <label for="query">Search Reviews</label>
                 </div>
                 <div class="col s12 m4">
                      <a href="{{ url_for('get_reviews') }}" class="red btn text-shadow"><i class="fas fa-undo-alt"></i></a>
