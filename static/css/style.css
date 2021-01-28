@@ -69,7 +69,7 @@ main {
 
 /*----------------------------------------------------Homepage*/
 
-/*--------------------------------Callout*/
+/*------------------------------Callout*/
 .row.callout {
    position: relative;   
 }
@@ -83,19 +83,20 @@ main {
     height: 450px;
     width: 99vw;
     align-self: center;
+    object-fit: cover;
+    z-index: -1;
 }   
 
 .row.overlay {
-    margin:0;
-    position: absolute;
-   
+    margin: -35vh 0 18vh 0;
+    position: absolute;    
 }
 
 .overlay-text h4 {
     font-family: "Orbitron", sans-serif;
     font-weight: 400; 
     color: #3d3b3b;
-    font-size: 17px;
+    font-size: calc(13px + (20 - 13) * ((100vw - 300px) / (1600 - 300)));
 }
 
 .overlay-btn {
@@ -122,9 +123,13 @@ main {
    top: 35%;    
 }
 
-/*--------------------------------About Card*/
+/*--------------------------About Card*/
 .card-panel.about {
     height: min-content;
+}
+
+.card-panel h4 {
+    font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
 }
 
 .about p {
@@ -272,11 +277,6 @@ main {
     height: 55px;
 }
 
-.btn-wrapper, .link {
-    display: grid;
-    place-items: center;
-}
-
 .page-footer .footer-copyright {
     margin: 0;
     background-color: transparent;    
@@ -306,18 +306,12 @@ main {
 }
 
 /*--------------------------------Media-Queries*/
-@media only screen and (min-width:768px) {
-    #login_mob, #logout_mob {
-        display: none;
-    }
-
-     .row.overlay {
-        position: unset;
-    }
-
-}
-
 @media only screen and (min-width:1024px) {
+    .row.overlay {
+        margin-top: -23vh;
+    }
+}
+@media only screen and (min-width:1461px) {
     .callout {
         position: relative;
     }
@@ -326,18 +320,19 @@ main {
         position: absolute; 
     }
 
-    .overlay-text h4 {
-        font-size: 20px;
-    }
-
     nav {
         display: flex;
         flex-direction: column;
     }
 
     #menu {
-    padding-right: 0;
-    margin-right: 0;
+        padding-right: 0;
+        margin-right: 0;
+    }
+
+    .row.overlay {
+        width: 550px;
+        margin: -25vh 0 22vh 0;
     }
 
     .card-preview-container {
