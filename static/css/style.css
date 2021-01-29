@@ -444,7 +444,8 @@ main {
     margin-bottom: 25px;
 }
 
-.home-btn:hover {
+.home-btn:hover,
+.home-btn:focus {
     background-color: #fb8c00;
 }
 
