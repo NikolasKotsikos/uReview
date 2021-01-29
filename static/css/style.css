@@ -429,12 +429,11 @@ main {
 .row .error h3 {
     font-family: "Orbitron", sans-serif;
     font-weight: 500;
-    font-size: 30px;
+    font-size: calc(14px + (30 - 14) * ((100vw - 300px) / (1600 - 300)));
 }
 
 .card-panel.error {
     height: auto;
-    width: 100%;
     margin-top: -370px;
 }
 
