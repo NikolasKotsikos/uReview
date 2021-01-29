@@ -424,6 +424,31 @@ main {
     place-items: center;
 }
 
+/*----------------------------------------------------------404 $ 500 Pages*/
+.row .error h2, 
+.row .error h3 {
+    font-family: "Orbitron", sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+}
+
+.card-panel.error {
+    height: auto;
+    width: 100%;
+    margin-top: -370px;
+}
+
+.home-btn {
+    background-color: #3d3b3b;
+    border-radius: 5px;
+    font-size: calc(10px + (11 - 10) * ((100vw - 300px) / (1600 - 300)));;
+    margin-bottom: 25px;
+}
+
+.home-btn:hover {
+    background-color: #fb8c00;
+}
+
 /*--------------------------------------------------------Media-Queries*/
 @media only screen and (min-width:1024px) {
     .row.overlay {
