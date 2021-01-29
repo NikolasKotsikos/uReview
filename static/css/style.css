@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500&family=Roboto:wght@300;400&display=swap');
 
-/*-------------------------------------------------------General*/
+/*----------------------------------------------------------------General*/
 html {
     width: 100%;
     height: 100%;
@@ -36,7 +36,7 @@ main {
     font-weight: 400;    
 }
 
-/*-------------------------------------------------------Flashes*/
+/*-------------------------------Flashed Messages*/
 .row.flashes, .flashes h3 {
     margin: 0;
 }
@@ -49,7 +49,7 @@ main {
     line-height: 3;
 }
 
-/*-------------------------------------------------------Navbar*/
+/*-------------------------------Navbar*/
 .brand-logo {
     font-family: "Orbitron", sans-serif;
     font-weight: 500;
@@ -70,7 +70,7 @@ main {
    margin-top: 15px;
 }
 
-/*----------------------------------------------------Homepage*/
+/*---------------------------------------------------------------Homepage*/
 
 /*------------------------------Callout*/
 .row.callout {
@@ -148,7 +148,7 @@ main {
    height: 35vh;
    width: 90%;
    margin: auto;
-   margin-top: 10%;   
+   margin-top: 65px;   
 }
 
 .carousel {
@@ -187,7 +187,13 @@ main {
    transform: translate(-50%, -50%);
 }
 
-/*--------------------------------User Profile Page*/
+/*--------------------------Homepage Search*/
+
+.row.search-row {
+    margin-top: 50px;
+}
+
+/*----------------------------------------------------User Profile Page*/
 .profile-btns {
     font-family: "Orbitron", sans-serif;
     display: flex;
@@ -199,7 +205,7 @@ main {
     margin: 15px 0;
 }
 
-/*--------------------------------Find Reviews Page*/
+/*----------------------------------------------------Find Reviews Page*/
 .card {
     background-color: #fb8c00;
 }
@@ -277,7 +283,7 @@ main {
     border-radius: 5px;
     font-size: calc(10px + (11 - 10) * ((100vw - 300px) / (1600 - 300)));;
 }
-/*--------------------------------Read Review Page*/
+/*--------------------------------------------------------Read Review Page*/
 .review-name {
     font-family: "Orbitron", sans-serif;
     font-weight: 500;
@@ -322,12 +328,12 @@ main {
 }
 
 
-/*--------------------------------Add Review Page*/
+/*------------------------------------------------------Add Review Page*/
 .card-panel.review-card {
     height: auto;
 }
 
-/*--------------------------------Edit Review Page*/
+/*-----------------------------------------------------Edit Review Page*/
 .edit-btns {
     display: grid;
     padding: 12px;
@@ -353,7 +359,7 @@ main {
   margin-right: 13px;  
 }
 
-/*--------------------------------Log-in & Create Account Page*/
+/*-----------------------------------------Log-in & Create Account Page*/
 
 .card-panel:not(.search-card, .review-card) {
     height: 32em;
@@ -373,7 +379,7 @@ main {
     height: 55px;
 }
 
-/*--------------------------------Genres & Platforms Pages*/
+/*--------------------------------------------Genres & Platforms Pages*/
 
 .page-title {
     font-family: "Orbitron", sans-serif;
@@ -397,7 +403,7 @@ main {
     object-fit: contain;
 }
 
-/*--------------------------------Page Footer*/
+/*----------------------------------------------------------Page Footer*/
 .page-footer .footer-copyright {
     margin: 0;
     background-color: transparent;    
@@ -412,7 +418,7 @@ main {
     place-items: center;
 }
 
-/*--------------------------------Media-Queries*/
+/*--------------------------------------------------------Media-Queries*/
 @media only screen and (min-width:1024px) {
     .row.overlay {
         margin-top: -23vh;
