@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 <section class="container review-page">
+    <div class="row back-btn">
+        <a href="{{ url_for('get_reviews') }}"
+            class="btn-small darken-2 text-shadow left edit-btn">
+            &lt;&lt;&lt;Back
+        </a>
+    </div>
     <div class="row">
         <div class="card s12">
 
@@ -33,10 +39,7 @@
                         </p>
                     </pre>
             </div> 
-            <div class="card-action review-btns">
-                        <a href="{{ url_for('get_reviews') }}"
-                            class="btn-small darken-2 text-shadow left edit-btn">Reviews<i
-                                class="fas fa-undo-alt"></i></a>
+            <div class="card-action review-btns">                        
                         {% if review.created_by|lower == session.user|lower %}
                         <a href="{{ url_for('edit_review', review_id=review._id) }}"
                             class="btn-small darken-2 text-shadow left edit-btn">Edit Review <i
@@ -51,13 +54,11 @@
             </div>          
         </div>
     </div>
-        
-        
-
-
-
-
-
+   <div class="row back-btn">
+        <a href="{{ url_for('get_reviews') }}"
+            class="btn-small darken-2 text-shadow left edit-btn">
+            &lt;&lt;&lt;Back
+        </a>
+    </div>
 </section>
-
 {% endblock%}

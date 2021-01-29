@@ -274,6 +274,13 @@ def find_platform(platform_name):
     return render_template("reviews.html", reviews=reviews)
 
 
+# 404 page function
+@app.errorhandler(404)
+def page_not_found(error):
+    # the 404 status is set explicitly
+    return render_template('404.html', title='404'), 404
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

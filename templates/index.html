@@ -36,6 +36,25 @@
         </p>
     </div>
 </section>
+<!--Homepage Search-->
+<section class="row search-row">    
+    <div class="col s12 m8 card-panel offset-m2 search-card">
+        <h4 class="page-title text-shadow orange-text text-darken-1 center-align">&gt;Keyword Search&lt;</h4>
+        <form action="{{ url_for('search') }}" method="POST" class="col s12">
+            <div class="row valign-wrapper center-align">
+                <div class="input-field col s12 m8">
+                    <i class="fas fa-search prefix"></i>
+                    <input type="text" name="query" id="query" minlength="2" class="validate" required>
+                    <label for="query">Search Reviews</label>
+                </div>
+                <div class="col s12 m4">
+                     <a href="{{ url_for('get_reviews') }}" class="red btn text-shadow"><i class="fas fa-undo-alt tooltipped" data-tooltip="Clear Search"></i></a>
+                    <button type="submit" class="green btn text-shadow"><i class="fas fa-search tooltipped" data-tooltip="Search"></i></button>
+                </div>
+            </div>
+        </form>
+    </div> 
+</section> 
 <!--Genres Carousel-->
 <section class="carousel-wrapper">
     <h4 class="center-align carousel-title orange-text text-darken-1 text-shadow">&gt;Find Reviews by Genre&lt;</h4>
@@ -65,26 +84,4 @@
         {% endfor %}
     </div>
 </section>
-<!--Homepage Search-->
-<section class="row search-row">    
-    <div class="col s12 m8 card-panel offset-m2 search-card">
-        <h4 class="page-title text-shadow orange-text text-darken-1 center-align">&gt;Keyword Search&lt;</h4>
-        <form action="{{ url_for('search') }}" method="POST" class="col s12">
-            <div class="row valign-wrapper center-align">
-                <div class="input-field col s12 m8">
-                    <i class="fas fa-search prefix"></i>
-                    <input type="text" name="query" id="query" minlength="2" class="validate" required>
-                    <label for="query">Search Reviews</label>
-                </div>
-                <div class="col s12 m4">
-                     <a href="{{ url_for('get_reviews') }}" class="red btn text-shadow"><i class="fas fa-undo-alt"></i></a>
-                    <button type="submit" class="green btn text-shadow"><i class="fas fa-search"></i></button>
-                </div>
-            </div>
-        </form>
-    </div>   
-
-
-
-
 {% endblock %}

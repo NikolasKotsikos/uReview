@@ -13,14 +13,14 @@
                     <label for="query">Search reviews</label>
                 </div>
                 <div class="col s12 m4">
-                    <a href="{{ url_for('get_reviews') }}" class="red btn text-shadow"><i class="fas fa-undo-alt"></i></a>
-                    <button type="submit" class="green btn text-shadow"><i class="fas fa-search"></i></button>
+                    <a href="{{ url_for('get_reviews') }}" class="red btn text-shadow"><i class="fas fa-undo-alt tooltipped" data-tooltip="Clear Search"></i></a>
+                    <button type="submit" class="green btn text-shadow"><i class="fas fa-search tooltipped" data-tooltip="Search"></i></button>
                 </div>
             </div>
         </form>
         {% if session.user %}
         <a class="col s12 m4 waves-effect waves-grey btn grey darken-2" href="{{ url_for('add_review') }}">
-            Add Review <i class="fas fa-plus right"></i>
+            Add Review <i class="fas fa-plus"></i>
         </a>
         {% endif %}
     </div>   
@@ -30,40 +30,36 @@
 <section class="row">
     <div class="cards-container">
         {% for review in reviews %}
-        <div class="col s12 m8 offset-m2 l6 card-preview">
+        <div class="col s12 m8 offset-m2 l6 card-preview">                
             <div class="card" id="{{ review.review_id }}">
-                <div class="card-image">
-                    <img src="{{ review.img_url}}" alt="Review image" loading="lazy">
-                    <span class="card-title review-name text-shadow"><u>{{ review.review_name }}</u></span>
-                </div>
-                <div class="preview-content-wrapper">
-                    <div class="game-data text-shadow">
-                        <ul>
-                            <li>
-                                Genre: <em>{{ review.genre_name }}</em>
-                            </li>
-                            <li>
-                                Platform: <em>{{ review.platform }}</em>
-                            </li>
-                            <li class="truncate">
-                                Developer: <em>{{ review.dev_name }}</em>
-                            </li>
-                            <li>
-                                Released: <em>{{ review.release_year }}</em>
-                            </li>
-                        </ul>
-                    </div>
-                    <span class="created-by left">
-                        by <strong>{{ review.created_by }}</strong>
-                    </span>
-                    <div class="card-content">
-
-                        <p class="review-text">
-                            {{ review.review_text }}
-                        </p>
-                        <a href="{{ url_for('read_review', review_id=review._id) }}" class="light-blue-text link right"><u>Read Review</u></a>
-                    </div>
-
+                        <a href="{{ url_for('read_review', review_id=review._id) }}">
+                            <div class="card-image">
+                                <img src="{{ review.img_url}}" alt="Review image" loading="lazy">
+                                <span class="card-title review-name text-shadow"><u>{{ review.review_name }}</u></span>
+                            </div>
+                            <div class="preview-content-wrapper">
+                                <div class="game-data text-shadow">
+                                    <ul>
+                                        <li>
+                                            Genre: <em>{{ review.genre_name }}</em>
+                                        </li>
+                                        <li>
+                                            Platform: <em>{{ review.platform }}</em>
+                                        </li>
+                                        <li class="truncate">
+                                            Developer: <em>{{ review.dev_name }}</em>
+                                        </li>
+                                        <li>
+                                            Released: <em>{{ review.release_year }}</em>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <span class="created-by left">by <strong>{{ review.created_by }}</strong></span>
+                                <div class="card-content">
+                                    <p class="review-text">{{ review.review_text }}</p>                            
+                                </div>
+                            </div>
+                        </a>
                     <div class="card-action">
                         {% if review.created_by|lower == session.user|lower %}
                         <a href="{{ url_for('edit_review', review_id=review._id) }}"
@@ -95,8 +91,7 @@
                                 Delete <i class="fas fa-trash-alt right"></i>
                             </a>
                         </div>
-                    </div>
-                </div>
+                    </div>                
             </div>
         </div>
 
