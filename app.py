@@ -283,7 +283,7 @@ def page_not_found(error):
 
 # 500 page function
 @app.errorhandler(500)
-def page_not_found(error):
+def internal_server(error):
     # the 500 status is set explicitly
     return render_template('500.html', title='500'), 500
 
