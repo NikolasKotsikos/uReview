@@ -22,7 +22,7 @@
                     <img src="{{ platform.img_url}}">                   
                 </div>
                <div class="card-content center-align">
-                   <span class="card-title platform-header"><a class="orange-text text-darken-1" href="{{ url_for('find_platform', platform_name=platform.platform_name) }}">{{ platform.platform_name }}</a></span>
+                   <span class="card-title platform-header"><a class="grey-text text-darken-2" href="{{ url_for('find_platform', platform_name=platform.platform_name) }}">{{ platform.platform_name }}</a></span>
                </div>
                {% if session.user|lower == "admin"|lower %}
                <div class="card-action">

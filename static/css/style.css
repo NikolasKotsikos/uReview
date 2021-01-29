@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500&family=Roboto:wght@300;400&display=swap');
 
 /*-------------------------------------------------------General*/
+html {
+    width: 100%;
+    height: 100%;
+}
+
 body {
     background-color: #e0e0e0;
     font-family: "Roboto", sans-serif;
@@ -31,12 +36,6 @@ main {
     font-weight: 400;    
 }
 
-.page-title {
-    font-family: "Orbitron", sans-serif;
-    font-weight: 500;   
-    font-size: 31px;     
-}
-
 /*-------------------------------------------------------Flashes*/
 .row.flashes, .flashes h3 {
     margin: 0;
@@ -45,7 +44,7 @@ main {
 .flashes h3 {
     font-family: "Orbitron";
     font-weight: 500;
-    font-size: 25px;
+    font-size: calc(18px + (25 - 18) * ((100vw - 300px) / (1600 - 300)));
     color: #fafafa; 
     line-height: 3;
 }
@@ -124,8 +123,8 @@ main {
 }
 
 /*--------------------------About Card*/
-.card-panel.about {
-    height: min-content;
+.row .card-panel.about {
+    height: auto;
 }
 
 .card-panel h4,
@@ -140,11 +139,12 @@ main {
     color: #616161;
 }
 
-/*--------------------------About Card*/
-.carousel-outer {
-   width: 85%;
+/*--------------------------Carousels*/
+.carousel-wrapper {
+   height: 35vh;
+   width: 90%;
    margin: auto;
-   margin-top: 10%;
+   margin-top: 10%;   
 }
 
 .carousel {
@@ -160,10 +160,8 @@ main {
 }
 
 .carousel-img {
+   border-radius: 50%;
    opacity: 0.85;
-}
-.carousel-img2 {
-    border-radius: 50%;
 }
 
 .carousel .carousel-item>img {
@@ -216,7 +214,7 @@ main {
     border-radius: 0 8px 0 0;
     font-family: "Orbitron", sans-serif;
     font-weight: 500;    
-    font-size: 14px;
+    font-size: calc(14px + (16 - 14) * ((100vw - 300px) / (1600 - 300))); 
 }
 
 .card-image img {
@@ -226,7 +224,7 @@ main {
 
 .created-by {
     margin-left: 30px;
-    font-size: 15px;
+    font-size: calc(13px + (15 - 13) * ((100vw - 300px) / (1600 - 300)));
 }
 
 .game-data {
@@ -262,14 +260,14 @@ main {
     font-family: "Roboto", sans-serif;
     font-weight: 400; 
     padding: 5px;
-    font-size: 12px;
+    font-size: calc(10px + (14 - 10) * ((100vw - 300px) / (1600 - 300)));;
     
 }
 
 .btn-small, .edit-btn {
     background-color: #3d3b3b;
     border-radius: 5px;
-    font-size: 12px;
+    font-size: calc(10px + (14 - 10) * ((100vw - 300px) / (1600 - 300)));;
 }
 /*--------------------------------Read Review Page*/
 .review-name {
@@ -378,12 +376,17 @@ main {
 
 /*--------------------------------Genres & Platforms Pages*/
 
-.page-title,
+.page-title {
+    font-family: "Orbitron", sans-serif;
+    font-weight: 500;    
+    font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));;   
+}
+
 .genre-container a,
 .platform-container a {
     font-family: "Orbitron", sans-serif;
     font-weight: 500;    
-    font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));;   
+    font-size: calc(12px + (17 - 12) * ((100vw - 300px) / (1600 - 300)));;   
 }
 
 .genre-container a,

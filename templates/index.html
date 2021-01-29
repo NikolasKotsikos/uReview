@@ -29,7 +29,7 @@
     <div class="col s12 m8 offset-m2 card-panel about">
         <h4 class="center-align orange-text text-darken-1 text-shadow">&gt;What is uReview?&lt;</h4>
         <p class="center-align">
-                Aren't you tired of reading reviews that feel likePR reports?
+                Aren't you tired of reading reviews that feel like PR reports?
                 uReview features 100% user generated content, representing the honest opinions of
                 gamers like yourself, independent of gaming platform.<br> With respect and passion, without prejudice,
                 read reviews written by your peers, or <a href="{{ url_for('create_account') }}">create an account</a> and add some of your own!
@@ -41,7 +41,7 @@
     <h4 class="center-align carousel-title orange-text text-darken-1 text-shadow">&gt;Find Reviews by Genre&lt;</h4>
     <div class="carousel">
         {% for genre in genres %}
-        <a class="carousel-item" href="{{ url_for('find_genre', genre_name=genre.genre_name) }}">
+        <a class="carousel-item text-shadow" href="{{ url_for('find_genre', genre_name=genre.genre_name) }}">
          <img
             class="carousel-img" loading="lazy"
             src="{{ url_for('static', filename='assets/images/square.png') }}"
@@ -56,7 +56,7 @@
     <h4 class="center-align carousel-title orange-text text-darken-1 text-shadow">&gt;Find Reviews by Platform&lt;</h4>
     <div class="carousel">
         {% for platform in platforms %}
-        <a class="carousel-item" href="{{ url_for('find_platform', platform_name=platform.platform_name) }}">
+        <a class="carousel-item tooltipped" data-tooltip="{{ platform.platform_name }}" href="{{ url_for('find_platform', platform_name=platform.platform_name) }}">
          <img
             class="carousel-img2" loading="lazy"
             src="{{ platform.img_url}}"
