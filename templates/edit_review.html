@@ -95,14 +95,14 @@
                     <!--Save,Cancel & Delete Buttons-->
                     <div class="row edit-btns">
                         <button type="submit" class="btn grey darken-2">
-                            Save <i class="fas fa-save right"></i>
+                            Save <i class="fas fa-save"></i>
                         </button>
                         <a class="waves-effect waves-grey btn grey darken-2"
                         href="{{ url_for('get_reviews') }}">
-                            Cancel <i class="fas fa-times right"></i>
+                            Cancel <i class="fas fa-times"></i>
                         </a>
                         <a data-target="{{ review._id }}" class="btn-small grey darken-1 right modal-trigger">
-                            Delete <i class="fas fa-trash-alt right"></i>
+                            Delete <i class="fas fa-trash-alt"></i>
                         </a>
                     </div> 
                     <!--Delete Review Modal-->
@@ -118,11 +118,11 @@
                         <div class="modal-footer modal-btns">
                             <a class="waves-effect waves-grey btn grey darken-2 modal-close"
                             href="#">
-                                Cancel <i class="fas fa-times right"></i>
+                                Cancel <i class="fas fa-times"></i>
                             </a>
                             <a class="btn grey darken-1"
                             href="{{ url_for('delete_review', review_id=review._id) }}">
-                                Delete <i class="fas fa-trash-alt right"></i>
+                                Delete <i class="fas fa-trash-alt"></i>
                             </a>
                         </div>
                     </div>                   

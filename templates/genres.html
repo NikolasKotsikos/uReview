@@ -6,7 +6,7 @@
     <div class="col offset-m3 offset-l4 center-align genre-container">
         <h4 class="page-title text-shadow orange-text text-darken-1">&gt;Manage Genres&lt;</h4>
         <a class="waves-effect waves-grey btn grey darken-2" href="{{ url_for('add_genre') }}">
-            Add Genre <i class="fas fa-plus right"></i>
+            Add Genre <i class="fas fa-plus"></i>
         </a>
     </div>   
 </div>
@@ -25,10 +25,10 @@
                {% if session.user|lower == "admin"|lower %}
                <div class="card-action">
                         <a data-target="edit{{loop.index}}" class="waves-effect waves-grey btn-small grey darken-2 modal-trigger">
-                        Edit <i class="fas fa-edit right"></i>
+                        Edit <i class="fas fa-edit"></i>
                         </a>
                         <a data-target="delete{{loop.index}}" class="btn-small grey darken-1 right modal-trigger">
-                        Delete <i class="fas fa-trash-alt right"></i>
+                        Delete <i class="fas fa-trash-alt"></i>
                         </a>
                </div>
                {% endif %}
@@ -46,10 +46,10 @@
                         </div>
                         <div class="modal-footer modal-btns">
                             <button type="submit" class="btn grey darken-2">
-                                Save <i class="fas fa-save right"></i>
+                                Save <i class="fas fa-save"></i>
                             </button>
                             <a class="waves-effect waves-grey btn grey darken-2 modal-close" href="#">
-                                Cancel <i class="fas fa-times right"></i>
+                                Cancel <i class="fas fa-times"></i>
                             </a>                            
                         </div>                                   
                     </form>
@@ -77,10 +77,10 @@
             </div>
             <div class="modal-footer modal-btns">
                 <a class="waves-effect waves-grey btn grey darken-2 modal-close" href="#">
-                    Cancel <i class="fas fa-times right"></i>
+                    Cancel <i class="fas fa-times"></i>
                 </a>
                 <a class="btn grey darken-1" href="{{ url_for('delete_genre', genre_id=genre._id) }}">
-                    Delete <i class="fas fa-trash-alt right"></i>
+                    Delete <i class="fas fa-trash-alt"></i>
                 </a>
             </div>
         </div>
