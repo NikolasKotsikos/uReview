@@ -373,16 +373,6 @@ main {
     height: 55px;
 }
 
-.page-footer .footer-copyright {
-    margin: 0;
-    background-color: transparent;    
-}
-
-.page-footer .container .row {
-    display: grid;
-    place-items: center;
-}
-
 /*--------------------------------Genres & Platforms Pages*/
 
 .page-title {
@@ -405,6 +395,21 @@ main {
 
 .platform-img img {
     object-fit: contain;
+}
+
+/*--------------------------------Page Footer*/
+.page-footer .footer-copyright {
+    margin: 0;
+    background-color: transparent;    
+}
+
+.page-footer .footer-copyright span>a {
+    color: #616161;
+}
+
+.page-footer .container .row {
+    display: grid;
+    place-items: center;
 }
 
 /*--------------------------------Media-Queries*/
