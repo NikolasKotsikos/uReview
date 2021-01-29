@@ -21,6 +21,10 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/home")
 def home():
+    """
+    Finds all genres and all platforms in the db and sorts them by name
+    to display alphabetically in relevant carousel.
+    """
     genres = list(mongo.db.genres.find().sort("genre_name", 1))
     platforms = list(mongo.db.platforms.find().sort("platform_name", 1))
     return render_template("index.html", genres=genres, platforms=platforms)
@@ -29,6 +33,10 @@ def home():
 # search functionality
 @app.route("/search", methods=["GET", "POST"])
 def search():
+    """
+    Performs text index search on the reviews
+    collection using the query variable.
+    """
     query = request.form.get("query")
     reviews = list(mongo.db.reviews.find({"$text": {"$search": query}}))
     return render_template("reviews.html", reviews=reviews)
@@ -38,7 +46,7 @@ def search():
 @app.route("/create_account", methods=["GET", "POST"])
 def create_account():
     if request.method == "POST":
-        # check if username already exists in db
+        """Checks if the username already exists in db"""
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
@@ -53,7 +61,7 @@ def create_account():
                     request.form.get("password"))
             }
             mongo.db.users.insert_one(create_account)
-            # put the new user into 'session' cookie
+            """Puts the new user into 'session' cookie"""
             session["user"] = request.form.get("username").lower()
             flash("Account created successfuly!")
             return redirect(url_for("profile", username=session["user"]))
@@ -65,12 +73,12 @@ def create_account():
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-        # check if username exists in db
+        """Checks if the username exists in db"""
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            # ensure hashed password matches user input
+            """Makes sure that the hashed password matches the users input"""
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
                         session["user"] = request.form.get("username").lower()
@@ -80,12 +88,12 @@ def login():
                             "profile", username=session["user"]))
 
             else:
-                # invalid password match
+                """Invalid password match"""
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
 
         else:
-            # username doesn't exist
+            """Username doesn't exist"""
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
 
@@ -94,7 +102,7 @@ def login():
 
 @app.route("/logout")
 def logout():
-    # remove user from session cookies
+    """Removes user from session cookie"""
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
@@ -103,7 +111,7 @@ def logout():
 # profile page functionality
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    # grab the session user's username from the database
+    """Gets the session user's username from the database"""
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     return render_template("profile.html", username=username)
@@ -112,6 +120,10 @@ def profile(username):
 # reviews functionality
 @app.route("/get_reviews")
 def get_reviews():
+    """
+    Finds all reviews in the database and sorts the cards
+    alphabetically by review name
+    """
     reviews = list(mongo.db.reviews.find())
     return render_template("reviews.html", reviews=reviews)
 
@@ -119,6 +131,10 @@ def get_reviews():
 @app.route("/add_review", methods=["GET", "POST"])
 def add_review():
     if request.method == "POST":
+        """
+        If post method is executed, creates a dictionary for form
+        and inserts user input into the database
+        """
         review = {
             "review_name": request.form.get("review_name"),
             "genre_name": request.form.get("genre_name"),
@@ -133,6 +149,7 @@ def add_review():
         flash("Review Added Successfuly!")
         return redirect(url_for("my_reviews"))
 
+    """Sort form values in alphabetical order"""
     genres = mongo.db.genres.find().sort("genre_name", 1)
     platforms = mongo.db.platforms.find().sort("platform_name", 1)
     return render_template(
@@ -142,6 +159,10 @@ def add_review():
 @app.route("/edit_review/<review_id>", methods=["GET", "POST"])
 def edit_review(review_id):
     if request.method == "POST":
+        """
+        If post method is executed, finds review by id
+        and updates database with updated form input
+        """
         submit = {
             "review_name": request.form.get("review_name"),
             "genre_name": request.form.get("genre_name"),
@@ -167,6 +188,7 @@ def edit_review(review_id):
 
 @app.route("/delete_review/<review_id>")
 def delete_review(review_id):
+    """Finds review by id and removes it from the database"""
     mongo.db.reviews.remove({"_id": ObjectId(review_id)})
     flash("Review Deleted Successfuly")
     return redirect(url_for("get_reviews"))
@@ -174,12 +196,14 @@ def delete_review(review_id):
 
 @app.route("/read_review/<review_id>", methods=["GET"])
 def read_review(review_id):
+    """Finds review by id and direct to read_review template"""
     review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
     return render_template("read_review.html", review=review)
 
 
 @app.route("/my_reviews")
 def my_reviews():
+    """Finds review by  and direct to read_review template"""
     reviews = list(mongo.db.reviews.find({"created_by": session["user"]}))
     return render_template("my_reviews.html", reviews=reviews)
 
@@ -187,6 +211,10 @@ def my_reviews():
 # genres functionality
 @app.route("/add_genre", methods=["GET", "POST"])
 def add_genre():
+    """
+    If post method is executed, creates a dictionary for form
+    and inserts new genre name into the database
+    """
     if request.method == "POST":
         genre = {
             "genre_name": request.form.get("genre_name")
@@ -200,12 +228,20 @@ def add_genre():
 
 @app.route("/get_genres")
 def get_genres():
+    """
+    Finds all genres in the database and sorts the cards
+    alphabetically by genre name
+    """
     genres = list(mongo.db.genres.find().sort("genre_name", 1))
     return render_template("genres.html", genres=genres)
 
 
 @app.route("/edit_genre/<genre_id>", methods=["GET", "POST"])
 def edit_genre(genre_id):
+    """
+    If post method is executed, finds genre by id
+    and updates database with new form input
+    """
     if request.method == "POST":
         submit = {
             "genre_name": request.form.get("genre_name")
@@ -217,6 +253,7 @@ def edit_genre(genre_id):
 
 @app.route("/delete_genre/<genre_id>")
 def delete_genre(genre_id):
+    """Finds genre by id and removes it from the database"""
     mongo.db.genres.remove({"_id": ObjectId(genre_id)})
     flash("Genre Deleted")
     return redirect(url_for("get_genres"))
@@ -224,6 +261,9 @@ def delete_genre(genre_id):
 
 @app.route("/find_genre/<genre_name>", methods=["GET", "POST"])
 def find_genre(genre_name):
+    """
+    Returns a list of reviews that contain the specified genre name
+    """
     reviews = list(mongo.db.reviews.find({"genre_name": genre_name}))
     return render_template("reviews.html", reviews=reviews)
 
@@ -231,6 +271,10 @@ def find_genre(genre_name):
 # platforms functionality
 @app.route("/add_platform", methods=["GET", "POST"])
 def add_platform():
+    """
+    If post method is executed, creates a dictionary for form
+    and inserts new platform name and img url into the database
+    """
     if request.method == "POST":
         platform = {
             "platform_name": request.form.get("platform_name"),
@@ -245,12 +289,20 @@ def add_platform():
 
 @app.route("/get_platforms")
 def get_platforms():
+    """
+    Finds all platforms in the database and sorts the cards
+    alphabetically by platform name
+    """
     platforms = list(mongo.db.platforms.find().sort("platform_name", 1))
     return render_template("platforms.html", platforms=platforms)
 
 
 @app.route("/edit_platform/<platform_id>", methods=["GET", "POST"])
 def edit_platform(platform_id):
+    """
+    If post method is executed, finds platform by id
+    and updates database with new form inputs
+    """
     if request.method == "POST":
         submit = {
             "platform_name": request.form.get("platform_name"),
@@ -263,6 +315,7 @@ def edit_platform(platform_id):
 
 @app.route("/delete_platform/<platform_id>")
 def delete_platform(platform_id):
+    """Finds platform by id and removes it from the database"""
     mongo.db.platforms.remove({"_id": ObjectId(platform_id)})
     flash("Platform Deleted")
     return redirect(url_for("get_platforms"))
@@ -270,6 +323,9 @@ def delete_platform(platform_id):
 
 @app.route("/find_platform/<platform_name>", methods=["GET", "POST"])
 def find_platform(platform_name):
+    """
+    Returns a list of reviews that contain the specified platform name
+    """
     reviews = list(mongo.db.reviews.find({"platform": platform_name}))
     return render_template("reviews.html", reviews=reviews)
 

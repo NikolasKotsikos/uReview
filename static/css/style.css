@@ -425,8 +425,8 @@ main {
 }
 
 /*----------------------------------------------------------404 $ 500 Pages*/
-.row .error h2, 
-.row .error h3 {
+.row .error h3, 
+.row .error h4 {
     font-family: "Orbitron", sans-serif;
     font-weight: 500;
     font-size: calc(14px + (30 - 14) * ((100vw - 300px) / (1600 - 300)));
