@@ -27,9 +27,11 @@
                 <h5 class="review-by text-shadow">
                     by <strong>{{ review.created_by }}</strong>
                 </h5>
-                <p class="full-review-text">
-                    {{ review.review_text }}
-                </p>
+                    <pre>
+                        <p class="full-review-text">
+                            {{ review.review_text }}
+                        </p>
+                    </pre>
             </div> 
             <div class="card-action review-btns">
                         <a href="{{ url_for('get_reviews') }}"

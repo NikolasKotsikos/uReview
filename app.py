@@ -131,7 +131,7 @@ def add_review():
         }
         mongo.db.reviews.insert_one(review)
         flash("Review Added Successfuly!")
-        return redirect(url_for("get_reviews"))
+        return redirect(url_for("my_reviews"))
 
     genres = mongo.db.genres.find().sort("genre_name", 1)
     platforms = mongo.db.platforms.find().sort("platform_name", 1)
@@ -154,6 +154,7 @@ def edit_review(review_id):
         }
         mongo.db.reviews.update({"_id": ObjectId(review_id)}, submit)
         flash("Review Edited, Changes Saved!")
+        return redirect(url_for("my_reviews"))
 
     review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
     genres = mongo.db.genres.find().sort("genre_name", 1)
@@ -276,4 +277,4 @@ def find_platform(platform_name):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=False)
+            debug=True)

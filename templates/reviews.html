@@ -71,9 +71,8 @@
                                 class="fas fa-edit"></i></a>
                         {% endif %}
                         {% if session.user|lower == "admin"|lower %}
-                        <a data-target="{{ review._id }}" class="btn-small grey darken-1 right modal-trigger"
-                            href="#del-modal">
-                            Delete <i class="fas fa-trash-alt left"></i>
+                        <a data-target="{{ review._id }}" class="btn-small del-btn grey darken-1 right modal-trigger">
+                            Delete <i class="fas fa-trash-alt right"></i>
                         </a>
                         {% endif %}                        
                     </div>
