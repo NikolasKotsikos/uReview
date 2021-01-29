@@ -9,7 +9,7 @@
 
 * As a visitor I don't want to have to make an account so as to experience content in the app. 
 
-* As a visitor I want to be able to sort and search posted reviews based on a variety of keywords. 
+* As a visitor I want to be able to sort and search posted reviews based on a categories or keywords. 
 
 
 ### Registered User UX 
