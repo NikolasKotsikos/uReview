@@ -122,9 +122,10 @@ def profile(username):
 def get_reviews():
     """
     Finds all reviews in the database and sorts the cards
-    alphabetically by review name
+    chronologically with more recent items first based on
+    the datetime info stored in '_id'
     """
-    reviews = list(mongo.db.reviews.find())
+    reviews = list(mongo.db.reviews.find().sort("_id", -1))
     return render_template("reviews.html", reviews=reviews)
 
 
