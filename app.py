@@ -204,8 +204,12 @@ def read_review(review_id):
 
 @app.route("/my_reviews")
 def my_reviews():
-    """Finds review by  and direct to read_review template"""
-    reviews = list(mongo.db.reviews.find({"created_by": session["user"]}))
+    """
+    Finds reviews created by the session user and
+    sorts them from recent to older
+    """
+    reviews = list(mongo.db.reviews.find(
+        {"created_by": session["user"]}).sort("_id", -1))
     return render_template("my_reviews.html", reviews=reviews)
 
 

@@ -2,7 +2,13 @@
 {% block content %}
 <div class="row">
     <!--Title-->
-    <h4 class="page-title text-shadow orange-text text-darken-1 center-align">&gt;My Reviews&lt;</h4>       
+    <div class="col s12 center-align">
+        <h4 class="page-title text-shadow orange-text text-darken-1">&gt;My Reviews&lt;</h4>
+        <a href="{{ url_for('get_reviews') }}"
+            class="btn-large grey darken-1 waves-effect text-shadow reviews-btn">
+            &lt;&lt;&lt;Reviews
+        </a>
+    </div>       
 </div>
 <!--Review Preview Cards-->
 <section class="row">
