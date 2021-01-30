@@ -363,7 +363,9 @@ main {
 
 /*-----------------------------------------Log-in & Create Account Page*/
 
-.card-panel:not(.search-card, .review-card) {
+.card-panel:not(.search-card, 
+                .review-card, 
+                .profile-btns) {
     height: 32em;
     margin-top: 30px;
 }
