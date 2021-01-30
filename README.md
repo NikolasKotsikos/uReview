@@ -24,7 +24,7 @@ This app was built using [GitHub](https://pages.github.com/) and deployed to [He
 
 **<details><summary> Features</summary>**
   - [Features used](#features-used)
-  - [To do list](#to-do-list)
+  - [Version and future](#version-and-future)
   - [Status](#status)
 </details>
 
@@ -201,7 +201,7 @@ As part of the design process, before starting my project I made initial wirefra
 - **Flash Messages**
   - Used for login and register form error responses.
 
-### **To do list**
+### **Version and Future**
 
 #### Status
 
