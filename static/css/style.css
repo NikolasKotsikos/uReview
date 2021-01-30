@@ -1,15 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500&family=Roboto:wght@300;400&display=swap');
 
 /*----------------------------------------------------------------General*/
-html {
-    width: 100%;
-    height: 100%;
-}
-
 body {
     background-color: #e0e0e0;
     font-family: "Roboto", sans-serif;
     display: flex;
+    max-width: 100vw;
     min-height: 100vh;
     flex-direction: column;    
     }
@@ -148,10 +144,11 @@ main {
 
 /*--------------------------Carousels*/
 .carousel-wrapper {
-   height: 35vh;
-   width: 90%;
+   height: 280px;
+   width: 100%;
    margin: auto;
-   margin-top: 65px;   
+   margin-top: 50px;
+   margin-bottom: 25px;   
 }
 
 .carousel {
@@ -447,11 +444,6 @@ main {
 }
 
 /*--------------------------------------------------------Media-Queries*/
-@media only screen and (min-width:1024px) {
-    .row.overlay {
-        margin-top: -23vh;
-    }
-}
 @media only screen and (min-width:1461px) {
     .callout {
         position: relative;
@@ -473,7 +465,7 @@ main {
 
     .row.overlay {
         width: 550px;
-        margin: -25vh 0 22vh 0;
+        margin: -325px 0 22vh 0;
     }
 
     .card-preview-container {
