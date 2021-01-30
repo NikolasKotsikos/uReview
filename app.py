@@ -63,7 +63,7 @@ def create_account():
             mongo.db.users.insert_one(create_account)
             """Puts the new user into 'session' cookie"""
             session["user"] = request.form.get("username").lower()
-            flash("Account created successfuly!")
+            flash("Account Created Successfully!")
             return redirect(url_for("profile", username=session["user"]))
 
     return render_template("create_account.html")
@@ -147,7 +147,7 @@ def add_review():
             "created_by": session["user"]
         }
         mongo.db.reviews.insert_one(review)
-        flash("Review Added Successfuly!")
+        flash("Review Added Successfully!")
         return redirect(url_for("my_reviews"))
 
     """Sort form values in alphabetical order"""
@@ -191,7 +191,7 @@ def edit_review(review_id):
 def delete_review(review_id):
     """Finds review by id and removes it from the database"""
     mongo.db.reviews.remove({"_id": ObjectId(review_id)})
-    flash("Review Deleted Successfuly")
+    flash("Review Deleted Successfully")
     return redirect(url_for("get_reviews"))
 
 
@@ -221,7 +221,7 @@ def add_genre():
             "genre_name": request.form.get("genre_name")
         }
         mongo.db.genres.insert_one(genre)
-        flash("Genre Added Successfuly!")
+        flash("Genre Added Successfully!")
         return redirect(url_for("get_genres"))
 
     return render_template("add_genre.html")
@@ -248,7 +248,7 @@ def edit_genre(genre_id):
             "genre_name": request.form.get("genre_name")
         }
         mongo.db.genres.update({"_id": ObjectId(genre_id)}, submit)
-        flash("Genre Edited Successfuly!")
+        flash("Genre Edited Successfully!")
         return redirect(url_for("get_genres"))
 
 
@@ -282,7 +282,7 @@ def add_platform():
             "img_url": request.form.get("img_url")
         }
         mongo.db.platforms.insert_one(platform)
-        flash("Platform Added Successfuly!")
+        flash("Platform Added Successfully!")
         return redirect(url_for("get_platforms"))
 
     return render_template("add_platform.html")
@@ -310,7 +310,7 @@ def edit_platform(platform_id):
             "img_url": request.form.get("img_url")
         }
         mongo.db.platforms.update({"_id": ObjectId(platform_id)}, submit)
-        flash("Platform Edited Successfuly!")
+        flash("Platform Edited Successfully!")
         return redirect(url_for("get_platforms"))
 
 
