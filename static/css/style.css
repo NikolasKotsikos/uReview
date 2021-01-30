@@ -90,7 +90,8 @@ main {
 }   
 
 .row.overlay {
-    margin: -35vh 0 18vh 0;
+    margin: 0 auto;
+    top: 10vh;
     position: absolute;    
 }
 
@@ -464,8 +465,7 @@ main {
     }
 
     .row.overlay {
-        width: 550px;
-        margin: -325px 0 22vh 0;
+        width: 550px;      
     }
 
     .card-preview-container {
