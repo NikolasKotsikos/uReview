@@ -68,6 +68,8 @@ The project provides all tiers of users <u>CRUD</u> functionality on their and t
 
 As part of the design process, before starting my project I made initial wireframes using [Lucidchart](https://lucidchart.com). Creating these mock-ups helped me plan the basic structure and arrangement of the features for my site.
 
+The final design has been influenced by mentor and user feedback so the wireframes map the journey from idea to functioning app.
+
 - [Homepage](static/assets/readme/pdfs/home.pdf)
 - [Create account page](static/assets/readme/pdfs/create-account.pdf)
 - [Log in page](static/assets/readme/pdfs/log-in.pdf)
@@ -78,13 +80,14 @@ As part of the design process, before starting my project I made initial wirefra
 - [Mobile view](static/assets/readme/pdfs/mobile.pdf)
 - [Mobile view](static/assets/readme/pdfs/tablet.pdf)
 
-> **Note:** The final design has been influenced by mentor and user feedback so the wireframes map the journey from idea to functioning app.
 
 ### **<u>Design</u>**
 
 **Structure**
 
-- A simple design structure with a fixed navbar and a dropdown side navigation menu accessible from every page. A brand logo is displayed in the top left of the screen to allow easy navigation back to the homepage.
+- A simple design structure with a fixed navbar, a dropdown side navigation menu accessible from every page and a fixed footer. A brand logo is displayed in the top left of the screen to allow easy navigation back to the homepage.
+
+- As a mobile first site I contained the logo, login button and nav menu icon centered by two spaces creating a core towards the center of the page. This helps keep the design consistent as it moves from smaller to larger viewports.
 
 - As well as including a title tag on my base.html, I have also added the meta description tag to help optimize my click-through rate from search engine result pages.
 
@@ -104,16 +107,18 @@ As part of the design process, before starting my project I made initial wirefra
 
 - The main font used throughout the site is 'Roboto' which belongs to the sans-serif typeface family. The font is clean and elegant, making it a good choice for web design.
 
-- I have used the 'Orbitron' font to create the 'uReview' title as it pairs well with my overall branding. Moreover it has been used as the font for titles and fonts all over the site.
+- I have used the 'Orbitron' font to create the 'uReview' logo as it pairs well with my overall branding. Moreover it has been used as the font for titles and fonts all over the site.
+
+- The greater than (>) and lower than (<) symbols have been used creatively to form icons for various action buttons throughout the site. That helps mix-up the use of [Font Awesome](https://fontawesome.com/) icons and re-inforces the site's branding.
 
 - Sans Serif is set as the fallback font if for any reason the main fonts aren't being imported into the site correctly.
 
 
 **Logo Design**
 
-- For this site, I created my own logo design with inspiration from old school operating systems. Using the greater than symbol  to create a simple but effective logo.
+- I created my own logo design with inspiration from old school operating systems. Using the greater than symbol  to create a simple but effective logo.
 
-- Following website conventions, my website logo is a link to the homepage. Over time through trial and error, many people have learned that clicking on a site’s logo leads them back to the homepage so adopting this standard reduces confusion by matching the UI to users’ expectations. The logo is also left-aligned which is the most familiar placement, and is where users look to find it.
+- Following website conventions, my website logo is a link to the homepage. Over time many people have learned that clicking on a site’s logo leads them back to the homepage so adopting this standard reduces confusion by matching the UI to users’ expectations. The logo is also left-aligned which is the most familiar placement, and is where users look to find it.
 
 
 ### <u>**User stories**</u>
@@ -135,11 +140,11 @@ As part of the design process, before starting my project I made initial wirefra
 
 * As a registered user I want to be able to add my review easily. 
 
-* As a registered user I want to be able to see all my reviews easily.
+* As a registered user I want to be able to see a collection of my psoted reviews easily.
 
-* As a registered user I want to be able to edit and update my reviews. 
+* As a registered user I want to be able to edit and delete my reviews. 
 
-* As a registered user I want to be able to delete my reviews. 
+* As a registered user I want to see new content first on consequtive site visits. 
 
  
 **Administrator User UX**
@@ -152,10 +157,24 @@ As part of the design process, before starting my project I made initial wirefra
 
 * As an administrator I want to easily manage both categories from one screen.
 
+ > **Note**: These user stories are tested in [testing.md]()
+
+## &rarr; **Database Architecture**
 
 <img src="static/assets/images/readme/db-schema.png">
 
-## &rarr; **Database Architecture**
+- **Collections**
+
+    The uReview database on MongoDB features 4 collections:
+    > **Note**: All collection contain the "_id" key whose valuew is the ObjectId item that contains a string.
+        
+     * The genres collection, which contains the key "genre_name" whose value is a string.
+
+     * The platforms collection, which contains the keys "platform_name" and "img_url" whose values are strings.
+
+     * The reviews collection, which contains the keys "review_name", "genre_name", "platform", "dev_name", "release_year", "img_url", "review_text" and "created_by". All of these keys have a string as their value.
+
+     * The users collection, which contains the "username" key which has a string as a value and the "password" key that has a string that has been hashed and salted by Werkzeug.
 
 ## &rarr; **Features**
 
@@ -187,16 +206,13 @@ As part of the design process, before starting my project I made initial wirefra
   - Images included contributing to the visual look.
 
 - **Modals**
-  - Used for delete confirmation and admin edit genres and platforms.
+  - Used for delete confirmation and admin edit genres and platforms tools.
 
 - **Carousel**
   - Used for cuisine categories displayed on the homepage.
 
 - **Search bar**
   - Allows the user to search reviews by keywords using text index searching. review names, cuisine names, ingredients, and food categories are included as the keywords for the query.
-
-- **Toasts**
-  - Used for login and register form success responses.
 
 - **Flash Messages**
   - Used for login and register form error responses.
@@ -333,14 +349,7 @@ This is the name of your repo in GitHub. It is good practice to use an identical
     - MONGO_URI
     - MONGO_DBNAME
 
-8. Push requirements.txt and Procfile to repository:
-  <u>requirements.txt</u>
-    - $ git add requirements.txt
-    - $ git commit -m "Added requirements.txt"
- 
-    <u>Procfile</u>
-   - $ git add Procfile
-   - $ git commit -m "Added Procfile"
+8. Push requirements.txt and Procfile to the repository.
 
 9. Go to the Deploy tab on Heroku and under the Automatic deployment section, click 'Enable Automatic Deploys'. Then under Manual deploy click 'Deploy Branch'.
 
