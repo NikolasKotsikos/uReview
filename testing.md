@@ -1,7 +1,7 @@
 ## &rarr; **Testing**
 
 **<details open><summary> Testing Documentation</summary>**
-  - [Admin tools](#accessor-log-in-details)
+  - [Admin tools](#admin-tools)
   - [Testing user stories](#testing-user-stories)
   - [Manual function testing](#manual-function-testing)
   - [Validator checks](#validator-checks)
@@ -32,69 +32,74 @@ Testing my site visitor's <u>key priorities</u>:
 - Brand logo directs the user back to the homepage from anywhere on the site.
 - 404 & 500 Error pages: I decided to create a custom 404.html & 500.html page for my user so if they are directed to a non-existent domain or encounter an internal server error, 
   they are presented with a consistent and appealing page and an easy navigation button back to the homepage.
-  <img src="static/assets/images/readme/404.png">
-   <img src="static/assets/images/readme/500.png">
-
- 
-**2. As a visitor I don't want to have to make an account so as to experience content in the app.**
-
-- Clear login button visible on the navbar as soon as the user enters the site.
-  - As the navbar is repeated on all pages of the site, the user can log in from any page.
-  - If a user is logged in, the button will display 'log out'.
-
-- After clicking the log in button, the user is presented with a modal containing two tabs, giving the user an option to log in or register.
-  - Validation is included in the input fields to let the user know if their input is valid through colour formatting.
-
- 
-  - Recognisable info icon with tooltip to let the user know which characters can be used.
+   
+**2. As a visitor I want to be able to sort and search posted reviews based on a categories or keywords.**
+- Search bar to allow the user to search for reviews using keywords. The search bar is set up to filter reviews based on genres & platfoms name, review name, developer name or any keyword included in the review text.
+- Carousels allow the user to sort reviews from the home screen by genre or by platform. In addition links to all genres and all platforms pages have been provided in the side nav menu.
 
 
-- User responses include notifying the user of any errors or success:
-  - Errors are shown below password in modal
-  - Success messages presented as a toast after the modal closes.
+**3. As a visitor I want to find where I can create an account easily.**
+- When the user arrives to the home page the ‘Create Account’ button is visible to the user immediately. The link is also accessible via the nav menu.
+- A third link to create account is present within the about card text .
 
-
-- After logging in or registering the user will have the option to add, edit, and delete their own reviews.
-
-**3. As a visitor I want to be able to sort and search posted reviews based on a categories or keywords.**
-
-- ‘Explore reviews’ button visible on the callout section as soon as the user enters the site. 
-- Navigation-link to reviews also included in the dropdown menu.
-- The review page contains review cards displaying review image, review name, cuisine, and who the review was created by.
-- The user can click onto a review card to direct them to the view review page which provides more details including age range, serving, time, food course, ingredients, and method.
 
 Testing my site registered user's <u>key priorities</u>:
 
-**1. Clear review categorisation and search bar to allow quick browsing**
+**1. As a registered user I want to easily find how I can log-in in order to post a review.**
+- Clear login button visible on the navbar as soon as the user enters the site.
+  - Login link included in the nav menu, displays 'log out' and the user's username if they are logged in.
+  - As the navbar is repeated on all pages of the site, the user can log in from any page.
+  - If a user is logged in, the button will display 'log out' and the user's username.
+  - The user is redirected to their profile page that contains a button to post a review. 
 
-- Link in the dropdown menu to the page displaying cuisine categories.
-- There is also a Carousel on the homepage which takes the user to the specific cuisine they click on.
-- Once on the cuisine page the user can click on a cuisine card to view all reviews within that category.
-- Search bar to allow the user to search for reviews using keywords. The search bar is set up to filter reviews based on cuisine name, review name, and ingredients.
-- Search bar input label to give user ideas of what to query by.
+- After clicking the log in button, the user is directed to a login page, where there is a link connecting to the create account page in case of a mistake.
+  - Validation is included in the input fields to let the user know if their input is valid through colour formatting. 
+  - Recognisable info icon with tooltip to let the user know which characters can be used.
+
+- User responses include notifying the user of any errors or success:
+  - Success messages are flashed between the navbar and main content on the top of the screen.
+  - Errors are flashed between the navbar and main content on the top of the screen.
 
 
-**2. Option to add, edit and delete own reviews**
-- When the user is logged in the ‘add review’ button is visible to the user on the first view of the site. The link is also accessible via the dropdown menu.
+**2. As a registered user I want to be able to add and read my review easily.**
+- When the user is logged in the 'Add a Review' button is visible to the user on the first view of the site. 
+- The link is also always accessible via the nav menu for a logged in user.
+- On the reviews page when visiting as a registered user the 'Add a Review' button appears right under the search bar on the top of the screen. 
+- When the user clicks 'Add a Review' they are taken to the add review page which presents the user with a template of inputs to fill out.
+- After posting their review the user is redirected to My Reviews page where they can see their review preview card.
+- The review page contains review preview cards displaying review image, review name, genres & platfoms, and who the review was created by.
+- The user can click onto a review card to direct them to the read review page which displays the full review text.
+- Navigation-link to reviews also included in the dropdown menu.
 
-- When the user clicks 'Add review' they are taken to the add review page which presents the user with a template of inputs to fill out.
+**3. As a registered user I want to see a collection of my posted reviews in one page.**
+- After logging in the user is redirected to the Profile page, where they will find a 'My Reviews' button which takes them to a page showing only their posted reviews with more recent posts sorted first.
+- A link to My Reviews is also always accessible via the nav menu for a logged in user.
 
-- The edit and delete buttons are only available to the user who created the reviews. These are found on the individual review cards and are only visible when the user is logged in.
+**4. As a registered user I want to have a profile page that bundles functionality.**
+- After logging in the user is redirected to the Profile page, where they will find three buttons: one taking them to the overall reviews page, one taking them to their posted reviews (My Reviews page) and one for adding a new review.
+
+**5.As a registered user I want to be able to edit and delete my reviews.**
+- The edit and delete buttons are only available to the user who created the reviews. These are found on the individual preview and review cards and are only visible when the user is logged in.
   - When the user clicks edit they will be directed to the edit page which is the same template as the add review page but input fields are already pre-filled with previous input.
 
-  - When the user selects delete they will be presented with a confirmation pop-up to confirm their action.
+  - When the user selects delete they will be presented with a confirmation modal to confirm their action.
+
+**6. As a registered user I want to see new content first on consequtive site visits.**
+- Reviews are sorted by most recent entries in both Reviews and My Reviews page, to keep the website fresh on consequtive visits.
 
 Testing my site administrator's <u>key priorities</u>:
 
-**1. When logged in as admin user, have the option to add, update and delete cuisine cards**
+**1. As an administrator I want to easily moderate user posted contents.**
 
-- See notes for site member testing point 5 above.
+- The site's administrator can delete reviews posted by any user. The relevant buttons appear on all reviews for them.
 
-**2. When logged in as admin user, have the option to add, update and delete cuisine cards**
+**2. As an administrator I want to be able to manage genres and platforms by adding new ones or deleting underused ones.**
 
-- Admin control over adding, editing, and deleting new genres & platfoms. Buttons only visible when the specified admin is logged in.
+- The individual pages for genres and platforms feature a button for adding a new genre/platform. 
+- The admin user has the option to edit or delete existing genres/platforms from their respective pages.
+- The nav menu links for the admin user reflect that by changing to Manage Genres/Platforms respectively.
 
-  ![review book page](static/assets/images/readme/admin-cuisine.png)
+ 
 
 #### Manual function testing
 
@@ -106,9 +111,11 @@ To ensure my site was working correctly I carried out some manual function testi
 
 - I checked the logo homepage navigation was working by clicking on the brand image from every page.
 
-- 404 Error page was tested by creating a broken link in the game URL and making sure it responded with my custom page.
+- 404 Error page was tested by creating a broken link in the URL and making sure it responded with my custom page.
+ <img src="static/assets/images/readme/404.png">
 
-- The links to review book retailers were checked by ensuring that each dropdown link navigated to the correct site opened on a new window. This was tested for every dropdown item.
+- 500 Error page was tested by creating a broken internal link in the URL and making sure it responded with my custom page.
+<img src="static/assets/images/readme/500.png">
 
 **2. Hover, focus, and active effects**
 
@@ -116,18 +123,18 @@ To ensure my site was working correctly I carried out some manual function testi
 
 **3. Log in, register, and logout function**
 
-- To check the login functionality was working I first clicked on the 'login' button to ensure the modal appeared, which it did. When presented with the modal I conducted various checks;
-  - I filled out the login form with an already registered username and password then clicked 'Login'. The modal closed, the login button changed to log out and I received a message 'lucyjpj successfully logged in'.
+- To check the login functionality was working I first clicked on the 'login' button to ensure the link redirected to the login page, which it did. When presented with the modal I conducted various checks;
+  - I filled out the login form with an already registered username and password then clicked 'Login'. I was redirected to the Profile page, the login button changed to log out and I received a message 'admin successfully logged in'.
    - I filled out the login form with a new username and password then clicked 'Login'. The modal stayed open and responded with a red flash message 'Incorrect Username and/or password'.
 
-- To check the Register functionality was working I first clicked on the 'login' button to ensure the modal appeared, which it did. Then I located the register tab and conducted some checks;
-  - I filled out the registration form with a new username and password then clicked 'Register'. The modal closed, the login button changed to log out and I received a message 'lucyjpj successfully logged in'.
+- To check the Create Account functionality was working I first clicked on the 'login' button to ensure the page was redirected properly, which it did. On it I conducted some checks;
+  - I filled out the registration form with a new username and password then clicked 'Register'. I was redirected to my Profile page, the login button changed to log out and I received a message 'Welcome admin'.
 
    - I filled out the login form with an already registered username and password then clicked 'Register'. The modal stayed open and responded with a red flash message 'Username already exists, please log in'.
   
-- I could also see that after logging in and registering successfully I had additional buttons displayed to me so I knew it was working. The log in modal was tested throughout all pages of the site.
+- I could also see that after logging in and registering successfully I had additional buttons displayed to me so I knew it was working. The log in functionality was tested throughout all pages of the site.
 
-- Once I was logged in and the 'log out' button was available I clicked this to check that it logged me out correctly. The log out button changed to log in, I received a message 'Successfully logged out' and the additional buttons were no longer visible to me so I knew it was working. This was tested throughout all pages of the site.
+- Once I was logged in and the 'log out admin' button was available I clicked this to check that it logged me out correctly. The log out button changed to log in, I received a message 'You have been logged out'. In the nav menu and home page the additional buttons were no longer visible to me so I knew it was working. This was tested throughout all pages of the site.
 
 **4. Form validation checks**
 
@@ -137,22 +144,22 @@ To ensure my site was working correctly I carried out some manual function testi
 
 - I checked the information tooltips were working by hovering over the information icon.
 
-- I tested the add/edit review and cuisine templates by inputting valid and invalid data and checking that I received the correct responses.
+- I tested the add/edit review and genres & platfoms templates by inputting valid and invalid data and checking that I received the correct responses.
 
-**5. Explore reviews and search bar**
-- I clicked on the 'Explore reviews' button on the homepage callout section and the link within the dropdown menu, and both correctly navigated to the reviews page. This was checked from all pages of the site.
+**5. Reviews and keyword search bar**
+- I clicked on the 'Reviews' button on the homepage callout section and the link within the dropdown menu, and both correctly navigated to the reviews page. This was checked from all pages of the site.
 
 - After adding my search indexes via the python interpreter I entered 'mongo.db.reviews.index_information()' to check that the correct details had been added. I also checked this by clicking on the 'indexes' section on MongoDB.
 
 - I submitted a selection of words into the review search bar to ensure the query function was filtering the reviews correctly, and all worked correctly.
 
-**6. Viewing reviews**
+**6. Reading reviews**
 - I clicked on each review card to make sure it displayed the correct information to me when navigated to the view reviews HTML template, and it did.
 
 **7. Adding review**
 - I logged in as a variety of different users to check that the add review button was only visible on the homepage and reviews page if a user was logged in.
 
-- I clicked on the 'Add review' button on the homepage callout section and the link within the dropdown menu, and both correctly navigated to the add review page. This was checked from all pages of the site.
+- I clicked on the 'Add a Review' button on the homepage callout section and the link within the dropdown menu, and both correctly navigated to the add review page. This was checked from all pages of the site.
 
 **8. Editing review**
 - I logged in as a variety of different users to check that the edit button was only visible on the reviews the specific user had added.
@@ -164,28 +171,28 @@ To ensure my site was working correctly I carried out some manual function testi
 
 - I clicked on the 'Delete' button on the review cards to test that I was correctly presented with a modal for delete confirmation. I then clicked the 'delete' button on the modal and checked if the review card had been removed.
 
-**10. Link to cuisine page**
-- I clicked on the 'genres & platfoms' link within the dropdown menu to check that I was correctly navigated to the cuisine page. This was checked from all pages of the site.
-  - Once on the cuisine page I clicked on each cuisine card to ensure I was correctly navigated to the reviews page, filtered by the correct cuisine type.
+**10. Link to genres & platfoms page**
+- I clicked on the 'genres & platfoms' link within the dropdown menu to check that I was correctly navigated to the genres & platfoms page. This was checked from all pages of the site.
+  - Once on the genres & platfoms page I clicked on each genre/platfom card to ensure I was correctly navigated to the reviews page, filtered by the correct genre/platfom type.
 
-- On the homepage, I clicked on every carousel item to ensure I was directed to the reviews page, filtered by the correct cuisine type.
+- On the homepage, I clicked on every carousel item to ensure I was directed to the reviews by genre/platform page, filtered by the correct genre/platfom type.
 
-**11. Adding cuisine**
-- I logged in as different users to check that the 'add cuisine' option in the dropdown menu and the 'add cuisine' button on the cuisine page was only visible when the specified admin user was logged in.
+**11. Adding genres & platfoms**
+- I logged in as different users to check that the 'add genres & platfoms' option in the dropdown menu and the 'add genres & platfoms' button on the genres & platfoms page was only visible when the specified admin user was logged in.
 
-- I clicked on 'add cuisine' to ensure that I was directed to the add cuisine page. I then entered the cuisine name and image URL into the form and clicked the submit 'add' icon to check if the new cuisine was added, and it was.
+- I clicked on 'add genres & platfoms' to ensure that I was directed to the add genres & platfoms page. I then entered the genres & platfoms name and image URL into the form and clicked the submit 'add' icon to check if the new genres & platfoms was added, and it was.
 
 
-**12. Editing cuisine**
+**12. Editing genres & platfoms**
 
-- I logged in as different users to check that the 'edit' button was only visible on the cuisine cards if I was logged in as the specified admin user.
+- I logged in as different users to check that the 'edit' button was only visible on the genres & platfoms cards if I was logged in as the specified admin user.
 
-- I clicked on the 'edit' button on various cuisine cards to ensure that I was directed to the edit cuisine page. I then updated the cuisine name and image URL and clicked the submit 'edit' icon to check if the cuisine had been updated, and it was.
+- I clicked on the 'edit' button on various genres & platfoms cards to ensure that I was directed to the edit genres & platfoms page. I then updated the genres & platfoms name and image URL and clicked the submit 'edit' icon to check if the genres & platfoms had been updated, and it was.
 
-**13. Deleting cuisine**
-- I logged in as different users to check that the 'Delete' button was only visible on the cuisine cards if I was logged in as the specified admin user.
+**13. Deleting genres & platfoms**
+- I logged in as different users to check that the 'Delete' button was only visible on the genres & platfoms cards if I was logged in as the specified admin user.
 
-- I clicked on the 'Delete' button on all the review cards to test that I was correctly presented with a modal for delete confirmation. I then clicked the 'Delete' button on the modal and checked if the cuisine card had been removed, it had.
+- I clicked on the 'Delete' button on all the review cards to test that I was correctly presented with a modal for delete confirmation. I then clicked the 'Delete' button on the modal and checked if the genres & platfoms card had been removed, it had.
 
 
 #### Validator checks
@@ -196,14 +203,22 @@ I used the PEP8 online checking tool to inspect my Python code against the style
 
 - [**HTML Validator**](https://validator.w3.org/)
 
-  No error or warning messages were received.
+   <u>Warnings received;</u>     
+  Received 2 warnings about the flashed messages section not containing any h2-h6 elements, which is due to no flashed messages being displayed when source code was captured, and for the type attribute being unnecessary for JavaScript resources.
   - To get the most accurate read of my HTML for validation, I ran my app and extracted my code from the 'View page source'.
+  - Due to the high number of html pages no screen captures were included to make this file more readable. 
 
 - [**CSS Validator**](https://jigsaw.w3.org/css-validator/)
+    <img src="static/assets/images/readme/CSS-validator-results.png">
+    <u>Errors received;</u>
 
-    No error or warning messages were received.
+   > Received 16 Value Error : font-size Parse Error (1600 - 300))) messages, that pertain to the calc code used to make the fonts responsive. After consultation with tutors they were considered safe to ignore. 
+   > Received 2 parse errors in line 364 and 369 regarding a :not() selector being applied.
+   After consultation with tutors they were all considered safe to ignore. 
 
 - [**JS hint**](https://jshint.com/)
+
+  <img src="static/assets/images/readme/js-hint-report.png">
 
   <u>**script.js**</u>
 
@@ -219,63 +234,25 @@ I used the PEP8 online checking tool to inspect my Python code against the style
 
   $ (Jquery) defined in base.html.
 
-  <u>**select.js**</u>
-
-  <u>Warnings received;</u>
-
-  > 'let' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
-
-  > 'class' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
-
-  > 'arrow function syntax (=>)' is only available in ES6 (use 'esversion: 6').
-
-  > 'template literal syntax' is only available in ES6 (use 'esversion: 6').
-
-  Warnings above occurred as JShint is using ECMAScript 5.1 specification and my code uses ECMAScript 6 specific syntax. If I add '/*jshint esversion: 6 */' to my file all of these errors are eliminated.
-
-  > The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype.
-
-  As this isn't my own code and it is working as expected I chose to ignore this warning.
-
-  <u>Undefined variables;</u>
-
-  > component
-
-  > M
-
-  > cash
-
-    These variables are all Materialize JS which is defined in my base.html.
+    These variables are all from Materialize's JS so I decided to ignore them.
 
 - **Developer tools**
 
-  One error message present in the console: **Fixed**
+  No error message present in the console.
 
-    ![env.py py error message](static/assets/images/readme/console-error.png)
-
-    I found this was a widely discussed error on [stack overflow](https://stackoverflow.com/questions/30693021/chrome-developer-tools-shows-favicon-404-error-in-brackets-livepreview), where the browser looks for a favicon.ico in the root level of a website and if not found generates an error. To avoid any errors being sent to my console, I decided to create my own [Favicon](https://favicon.io/) using my site logo. This not only helped to eliminate my console error but added a personal touch to my website.
-
-  ![Favicon](static/assets/images/readme/favicon-ss.png)  
-
-
-- [**PEP8 online check**](http://pep8online.com/checkresult)
+- [**PEP8 online check**](http://pep8online.com/)
   
   app.py:
 
   'All right'
 
-  env.py:
-
-  ![env.py py error message](static/assets/images/readme/py-error.png)
-
-   My .gitignore file ignores env.py so the error can be disregarded.
 
 
 #### Audits
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse) was used to run a series of audits to improve the quality of web pages. Overall performance and errors are highlighted below.
 
-![Lighthouse overall performance](static/assets/images/readme/lh-results.png)
+![Lighthouse overall performance](static/assets/images/readme/audit.png)
 
 - To improve performance I added [lazy loading](https://web.dev/browser-level-image-lazy-loading/) to all my images to reduce page weight, allowing for a quicker page load time.
 
@@ -301,23 +278,22 @@ The low-performance review was mainly driven by the following metrics:
 
 #### Additional Testing
 
-- The Website was tested on Google Chrome, Safari browsers, Firefox, and Edge.
+- The Website was tested on  the latest versions of Google Chrome, Safari, Mozilla Firefox, Microsoft Edge and Opera web browsers.
 
-- The website was viewed on a variety of devices including HP Laptop, Macbook pro, Ipad and IPhones (Version 6,7,8,11, 12)
+- The website was viewed on a variety of devices including Dell Laptop, desktop PC (1440p and 1080p screens), Ipad Air and IPhones (Version 5,6 and XR)
 
-- Friends and family members were asked to review the site to point out any bugs, user experience issues, and/or suggestions.
-  - Feedback action:
-    - Would like the site to include dietary requirements- this is included in my future development plans.
-    - Would like to have the option to filter by age- this is included in my future development plans.
-    - Links to the book retailers not working correctly- more details in bug section below.
+- Friends and family members were asked to review the site to point out any bugs, user experience issues, and/or suggestions. 
+   
+- For the same purpose the site was submitted for peer review on the [Code Institute](https://codeinstitute.net/) Slack Community and on [Career Karma](https://careerkarma.com/).
 
-- Project posted on Slack, asking for feedback from fellow students.
+- Feedback action:
+    - Would like reviews to display with newer additions showing first. **Implemented**
+    - Would like to have the option to go easily go back to the reviews page from My Reviews.**Implemented**
 
 #### Bugs
 
 |     | Bug                                                                           | Action                                                            |
 |-----|-------------------------------------------------------------------------------|-------------------------------------------------------------------|
-| [X] | Materialize select not working correctly on iPhone                     | I found that this is a [known issue](https://github.com/Dogfalo/materialize/issues/6464) with Materialize select not working correctly on new iOS. I found a temporary solution on [GitHub](https://github.com/Dogfalo/materialize/blob/c0da34049deec36efbd4681f73b3446e92918ca8/js/select.js) and added the code to select.js which has fixed the bug  |
-| [X] | Materialize dropdown menu is out of sync when selecting links                    | I found that this is a [known issue](https://github.com/Dogfalo/materialize/issues/6464) with materialize dropdown not working correctly on new iOS. I found a solution on [Stack overflow](https://stackoverflow.com/questions/52850091/materialize-select-and-dropdown-touch-event-selecting-wrong-item?answertab=active#tab-top) and added the code to select.js which has fixed the bug |
-| [ ] | Materialize select showing browser default arrow on iPhone                    | Known issue with iOS, doesn't affect the functionality for the user but I will continue to seek a solution  |
-| [ ] | Images not all showing on iPhone                   | As the image URL is chosen by the user I am not able to fix this issue, however as mentioned in my future development plans I would like to eventually change this to a media upload  |
+| [X] | User could create duplicate accounts                                          | The bug was fixed by correcting a syntax error in the create_account app route in app.py |
+| [X] | Review test would not retain user's paragraphing                              | The issue was fixed by wrapping the p element in a pre element and adding the line white-space: pre-wrap in my css file  |
+| [X] | Modals wouldn't work on genres and platforms page for editing or deleting     | This bug was fixed by adding edit(loop.index) and delete(loop.index) as the id and data-targets for the modals|

@@ -129,9 +129,9 @@ The final design has been influenced by mentor and user feedback so the wirefram
 
 * As a visitor I want to easily navigate the site and find reviews from the home page.
 
-* As a visitor I don't want to have to make an account so as to experience content in the app. 
-
 * As a visitor I want to sort and search posted reviews based on a categories or keywords. 
+
+* As a visitor I want to find where I can create an account easily. 
 
 
 **Registered User UX**
