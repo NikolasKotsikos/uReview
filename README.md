@@ -442,7 +442,7 @@ When you clone a repository, the repository is copied on to your local machine.
 
 #### Acknowledgments
 
-- My Mentor, Aaron for his help and support throughout the project.
+- My Mentor, [Aaron Sinnott](https://www.linkedin.com/in/aaronsinnott/) for his help and support throughout the project.
 
 - The help and support received from the tutors at [Code Institute](https://codeinstitute.net/).
 
