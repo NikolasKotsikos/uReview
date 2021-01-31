@@ -7,7 +7,7 @@
 
 This app was built using [GitHub](https://pages.github.com/) and deployed to [Heroku](https://www.heroku.com/).
 
-[Visit uReview](http://ureview2021.herokuapp.com/)
+[Visit uReview](https://ureview2021.herokuapp.com/)
 
 </div>
 
