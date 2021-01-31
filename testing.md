@@ -1,0 +1,331 @@
+## &rarr; **Testing**
+
+**<details open><summary> Testing Documentation</summary>**
+  - [Testing user stories](#testing-user-stories)
+  - [Manual function testing](#manual-function-testing)
+  - [Validator checks](#validator-checks)
+  - [Audits](#audits)
+  - [Responsive Design](#responsive-design)
+  - [Additional Testing](#additional-testing)
+  - [Bugs](#bugs)
+</details>
+
+---
+
+#### Testing user stories
+
+Testing my site visitor's <u>key priorities</u>:
+
+**1. A Simple, user-friendly site that is easy to navigate**
+ - Site includes a main navbar featuring a dropdown side nav, with same and different page navigation.
+ 
+- Navigation menu is fixed so is always visible to the user.
+- Brand logo directs the user back to the homepage from anywhere on the site.
+- 404 & 500 Error pages: I decided to create a custom 404.html & 500.html page for my user so if they are directed to a non-existent domain, they are presented with a consistent and appealing page and an easy navigation button back to the homepage.
+
+ 
+**2. Ability to register and an easily accessible button to 'Log in’**
+
+- Clear login button visible on the navbar as soon as the user enters the site.
+  - As the navbar is repeated on all pages of the site, the user can log in from any page.
+  - If a user is logged in, the button will display 'log out'.
+
+- After clicking the log in button, the user is presented with a modal containing two tabs, giving the user an option to log in or register.
+  - Validation is included in the input fields to let the user know if their input is valid through colour formatting.
+
+  ![Validation](static/assets/images/readme/validation.png)
+
+  - Recognisable info icon with tooltip to let the user know which characters can be used.
+
+![Tooltips](static/assets/images/readme/tooltip.png)
+
+- User responses include notifying the user of any errors or success:
+  - Errors are shown below password in modal
+  - Success messages presented as a toast after the modal closes.
+
+![User responses](static/assets/images/readme/user-responses.png)
+
+- After logging in or registering the user will have the option to add, edit, and delete their own reviews.
+
+**3. Explore reviews posted by others**
+
+- ‘Explore reviews’ button visible on the callout section as soon as the user enters the site. 
+- Navigation-link to reviews also included in the dropdown menu.
+
+    ![Explore reviews nav ](static/assets/images/readme/reviews-nav.png)
+
+- The review page contains review cards displaying review image, review name, cuisine, and who the review was created by.
+
+    ![reviews page](static/assets/images/readme/review-page.png)
+
+- The user can click onto a review card to direct them to the view review page which provides more details including age range, serving, time, food course, ingredients, and method.
+
+    ![View reviews page](static/assets/images/readme/v-review-page.png)
+
+**4. Clear review categorisation and search bar to allow quick browsing**
+
+- Link in the dropdown menu to the page displaying cuisine categories.
+
+![Dropdown menu](static/assets/images/readme/cuisine-dd.png)
+
+- There is also a Carousel on the homepage which takes the user to the specific cuisine they click on.
+
+  ![Carousel](static/assets/images/readme/carousel.png)
+
+- Once on the cuisine page the user can click on a cuisine card to view all reviews within that category.
+
+![Dropdown menu](static/assets/images/readme/cuisine-page.png)
+
+- Search bar to allow the user to search for reviews using keywords. The search bar is set up to filter reviews based on cuisine name, review name, and ingredients.
+   - Search bar input label to give user ideas of what to query by.
+
+    ![Search bar](static/assets/images/readme/search.png)
+
+
+**5. Option to add, edit and delete own reviews**
+- When the user is logged in the ‘add review’ button is visible to the user on the first view of the site. The link is also accessible via the dropdown menu.
+
+- When the user clicks 'Add review' they are taken to the add review page which presents the user with a template of inputs to fill out.
+
+- The edit and delete buttons are only available to the user who created the reviews. These are found on the individual review cards and are only visible when the user is logged in.
+  - When the user clicks edit they will be directed to the edit page which is the same template as the add review page but input fields are already pre-filled with previous input.
+
+  - When the user selects delete they will be presented with a confirmation pop-up to confirm their action.
+
+Testing my site administrator's <u>key priorities</u>:
+
+**1. When logged in as admin user, have the option to add, update and delete cuisine cards**
+
+- See notes for site member testing point 5 above.
+
+**2. When logged in as admin user, have the option to add, update and delete cuisine cards**
+
+- Admin control over adding, editing, and deleting new genres & platfoms. Buttons only visible when the specified admin is logged in.
+
+  ![review book page](static/assets/images/readme/admin-cuisine.png)
+
+#### Manual function testing
+
+To ensure my site was working correctly I carried out some manual function testing;
+
+**1. Site navigation**
+
+- I checked the site dropdown menu was working correctly by starting on the home-page and navigating around the site from and to every screen the user would be faced with.
+
+- I checked the logo homepage navigation was working by clicking on the brand image from every page.
+
+- 404 Error page was tested by creating a broken link in the game URL and making sure it responded with my custom page.
+
+- The links to review book retailers were checked by ensuring that each dropdown link navigated to the correct site opened on a new window. This was tested for every dropdown item.
+
+**2. Hover, focus, and active effects**
+
+- I hovered over every button element to ensure the correct brightness effect was in place.
+
+**3. Log in, register, and logout function**
+
+- To check the login functionality was working I first clicked on the 'login' button to ensure the modal appeared, which it did. When presented with the modal I conducted various checks;
+  - I filled out the login form with an already registered username and password then clicked 'Login'. The modal closed, the login button changed to log out and I received a message 'lucyjpj successfully logged in'.
+   - I filled out the login form with a new username and password then clicked 'Login'. The modal stayed open and responded with a red flash message 'Incorrect Username and/or password'.
+
+- To check the Register functionality was working I first clicked on the 'login' button to ensure the modal appeared, which it did. Then I located the register tab and conducted some checks;
+  - I filled out the registration form with a new username and password then clicked 'Register'. The modal closed, the login button changed to log out and I received a message 'lucyjpj successfully logged in'.
+
+   - I filled out the login form with an already registered username and password then clicked 'Register'. The modal stayed open and responded with a red flash message 'Username already exists, please log in'.
+  
+- I could also see that after logging in and registering successfully I had additional buttons displayed to me so I knew it was working. The log in modal was tested throughout all pages of the site.
+
+- Once I was logged in and the 'log out' button was available I clicked this to check that it logged me out correctly. The log out button changed to log in, I received a message 'Successfully logged out' and the additional buttons were no longer visible to me so I knew it was working. This was tested throughout all pages of the site.
+
+**4. Form validation checks**
+
+- Login/Register form validation errors;
+  - I entered an invalid username into the username field and was displayed with 'Please match the format requested'.
+  - I entered an invalid password into the password field and was displayed with 'Please match the format requested'.
+
+- I checked the information tooltips were working by hovering over the information icon.
+
+- I tested the add/edit review and cuisine templates by inputting valid and invalid data and checking that I received the correct responses.
+
+**5. Explore reviews and search bar**
+- I clicked on the 'Explore reviews' button on the homepage callout section and the link within the dropdown menu, and both correctly navigated to the reviews page. This was checked from all pages of the site.
+
+- After adding my search indexes via the python interpreter I entered 'mongo.db.reviews.index_information()' to check that the correct details had been added. I also checked this by clicking on the 'indexes' section on MongoDB.
+
+- I submitted a selection of words into the review search bar to ensure the query function was filtering the reviews correctly, and all worked correctly.
+
+**6. Viewing reviews**
+- I clicked on each review card to make sure it displayed the correct information to me when navigated to the view reviews HTML template, and it did.
+
+**7. Adding review**
+- I logged in as a variety of different users to check that the add review button was only visible on the homepage and reviews page if a user was logged in.
+
+- I clicked on the 'Add review' button on the homepage callout section and the link within the dropdown menu, and both correctly navigated to the add review page. This was checked from all pages of the site.
+
+**8. Editing review**
+- I logged in as a variety of different users to check that the edit button was only visible on the reviews the specific user had added.
+
+- I clicked on the 'Edit' button on the review cards to test that I was correctly navigated to the edit review page and that the fields were already prefilled with the previous data inputted.
+
+**9. Deleting review**
+- I logged in as a variety of different users to check that the delete button was only visible on the reviews the specific user had added.
+
+- I clicked on the 'Delete' button on the review cards to test that I was correctly presented with a modal for delete confirmation. I then clicked the 'delete' button on the modal and checked if the review card had been removed.
+
+**10. Link to cuisine page**
+- I clicked on the 'genres & platfoms' link within the dropdown menu to check that I was correctly navigated to the cuisine page. This was checked from all pages of the site.
+  - Once on the cuisine page I clicked on each cuisine card to ensure I was correctly navigated to the reviews page, filtered by the correct cuisine type.
+
+- On the homepage, I clicked on every carousel item to ensure I was directed to the reviews page, filtered by the correct cuisine type.
+
+**11. Adding cuisine**
+- I logged in as different users to check that the 'add cuisine' option in the dropdown menu and the 'add cuisine' button on the cuisine page was only visible when the specified admin user was logged in.
+
+- I clicked on 'add cuisine' to ensure that I was directed to the add cuisine page. I then entered the cuisine name and image URL into the form and clicked the submit 'add' icon to check if the new cuisine was added, and it was.
+
+
+**12. Editing cuisine**
+
+- I logged in as different users to check that the 'edit' button was only visible on the cuisine cards if I was logged in as the specified admin user.
+
+- I clicked on the 'edit' button on various cuisine cards to ensure that I was directed to the edit cuisine page. I then updated the cuisine name and image URL and clicked the submit 'edit' icon to check if the cuisine had been updated, and it was.
+
+**13. Deleting cuisine**
+- I logged in as different users to check that the 'Delete' button was only visible on the cuisine cards if I was logged in as the specified admin user.
+
+- I clicked on the 'Delete' button on all the review cards to test that I was correctly presented with a modal for delete confirmation. I then clicked the 'Delete' button on the modal and checked if the cuisine card had been removed, it had.
+
+
+#### Validator checks
+
+The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project. The code was entered through direct input. JS hint was used to check for any errors with my Javascript files. 
+JS was also tested by opening the developer console window on Chrome and checking for any errors as I clicked through the site.
+I used the PEP8 online checking tool to inspect my Python code against the style conventions in PEP 8.
+
+- [**HTML Validator**](https://validator.w3.org/)
+
+  No error or warning messages were received.
+  - To get the most accurate read of my HTML for validation, I ran my app and extracted my code from the 'View page source'.
+
+- [**CSS Validator**](https://jigsaw.w3.org/css-validator/)
+
+    No error or warning messages were received.
+
+- [**JS hint**](https://jshint.com/)
+
+  <u>**script.js**</u>
+
+  <u>Warnings received;</u>
+
+  > 'let' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
+
+  Warnings occurred as JShint is using ECMAScript 5.1 specification and my code uses ECMAScript 6 specific syntax. However, all code is valid.
+
+  <u>Undefined variables;</u>
+
+  > $
+
+  $ (Jquery) defined in base.html.
+
+  <u>**select.js**</u>
+
+  <u>Warnings received;</u>
+
+  > 'let' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
+
+  > 'class' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
+
+  > 'arrow function syntax (=>)' is only available in ES6 (use 'esversion: 6').
+
+  > 'template literal syntax' is only available in ES6 (use 'esversion: 6').
+
+  Warnings above occurred as JShint is using ECMAScript 5.1 specification and my code uses ECMAScript 6 specific syntax. If I add '/*jshint esversion: 6 */' to my file all of these errors are eliminated.
+
+  > The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype.
+
+  As this isn't my own code and it is working as expected I chose to ignore this warning.
+
+  <u>Undefined variables;</u>
+
+  > component
+
+  > M
+
+  > cash
+
+    These variables are all Materialize JS which is defined in my base.html.
+
+- **Developer tools**
+
+  One error message present in the console: **Fixed**
+
+    ![env.py py error message](static/assets/images/readme/console-error.png)
+
+    I found this was a widely discussed error on [stack overflow](https://stackoverflow.com/questions/30693021/chrome-developer-tools-shows-favicon-404-error-in-brackets-livepreview), where the browser looks for a favicon.ico in the root level of a website and if not found generates an error. To avoid any errors being sent to my console, I decided to create my own [Favicon](https://favicon.io/) using my site logo. This not only helped to eliminate my console error but added a personal touch to my website.
+
+  ![Favicon](static/assets/images/readme/favicon-ss.png)  
+
+
+- [**PEP8 online check**](http://pep8online.com/checkresult)
+  
+  app.py:
+
+  'All right'
+
+  env.py:
+
+  ![env.py py error message](static/assets/images/readme/py-error.png)
+
+   My .gitignore file ignores env.py so the error can be disregarded.
+
+
+#### Audits
+
+[Lighthouse](https://developers.google.com/web/tools/lighthouse) was used to run a series of audits to improve the quality of web pages. Overall performance and errors are highlighted below.
+
+![Lighthouse overall performance](static/assets/images/readme/lh-results.png)
+
+- To improve performance I added [lazy loading](https://web.dev/browser-level-image-lazy-loading/) to all my images to reduce page weight, allowing for a quicker page load time.
+
+<u>Performance</u>
+
+The low-performance review was mainly driven by the following metrics:
+
+- Properly size images;
+
+  As images are uploaded through the image URL form input I am not able to take any action on adjusting image sizes.
+
+- Serve images in next-gen formats;
+
+  I tried converting my images to JPEG 2000 as suggested, however, the images were not loading due to their limitations of only working on certain browsers. Therefore I have kept my image in a PNG and JPG format.
+
+#### Responsive Design
+
+- Site created as a mobile-first design.
+
+- Viewport tag included in the head of HTML files to tell the browser how to respond to different resolutions, particularly mobile ones.
+
+- Media queries used in the CSS file to target larger devices.
+
+#### Additional Testing
+
+- The Website was tested on Google Chrome, Safari browsers, Firefox, and Edge.
+
+- The website was viewed on a variety of devices including HP Laptop, Macbook pro, Ipad and IPhones (Version 6,7,8,11, 12)
+
+- Friends and family members were asked to review the site to point out any bugs, user experience issues, and/or suggestions.
+  - Feedback action:
+    - Would like the site to include dietary requirements- this is included in my future development plans.
+    - Would like to have the option to filter by age- this is included in my future development plans.
+    - Links to the book retailers not working correctly- more details in bug section below.
+
+- Project posted on Slack, asking for feedback from fellow students.
+
+#### Bugs
+
+|     | Bug                                                                           | Action                                                            |
+|-----|-------------------------------------------------------------------------------|-------------------------------------------------------------------|
+| [X] | Materialize select not working correctly on iPhone                     | I found that this is a [known issue](https://github.com/Dogfalo/materialize/issues/6464) with Materialize select not working correctly on new iOS. I found a temporary solution on [GitHub](https://github.com/Dogfalo/materialize/blob/c0da34049deec36efbd4681f73b3446e92918ca8/js/select.js) and added the code to select.js which has fixed the bug  |
+| [X] | Materialize dropdown menu is out of sync when selecting links                    | I found that this is a [known issue](https://github.com/Dogfalo/materialize/issues/6464) with materialize dropdown not working correctly on new iOS. I found a solution on [Stack overflow](https://stackoverflow.com/questions/52850091/materialize-select-and-dropdown-touch-event-selecting-wrong-item?answertab=active#tab-top) and added the code to select.js which has fixed the bug |
+| [ ] | Materialize select showing browser default arrow on iPhone                    | Known issue with iOS, doesn't affect the functionality for the user but I will continue to seek a solution  |
+| [ ] | Images not all showing on iPhone                   | As the image URL is chosen by the user I am not able to fix this issue, however as mentioned in my future development plans I would like to eventually change this to a media upload  |

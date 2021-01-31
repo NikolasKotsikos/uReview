@@ -39,7 +39,7 @@ This app was built using [GitHub](https://pages.github.com/) and deployed to [He
 </details>
 
 **<details><summary> Testing</summary>**
-  - [Testing Documentation](https://github.com/Lucyjpjones/wean-cuisine/blob/master/testing.md)
+  - [Testing Documentation](https://github.com/NikolasKotsikos/uReview/blob/master/testing.md)
 </details>
 
 **<details><summary> Credits</summary>**
@@ -70,15 +70,15 @@ As part of the design process, before starting my project I made initial wirefra
 
 The final design has been influenced by mentor and user feedback so the wireframes map the journey from idea to functioning app.
 
-- [Homepage](static/assets/readme/pdfs/home.pdf)
-- [Create account page](static/assets/readme/pdfs/create-account.pdf)
-- [Log in page](static/assets/readme/pdfs/log-in.pdf)
-- [Reviews page](static/assets/readme/pdfs/reviews-visitor.pdf)
-- [Add/Edit review page](static/assets/readme/pdfs/add-edit-review.pdf)
-- [Read review page visitor view](static/assets/readme/pdfs/read-review-visitor.pdf)
-- [Read review page user view](static/assets/readme/pdfs/read-review-user.pdf)
-- [Mobile view](static/assets/readme/pdfs/mobile.pdf)
-- [Mobile view](static/assets/readme/pdfs/tablet.pdf)
+- [Homepage](static/assets/images/readme/pdfs/home.pdf)
+- [Create account page](static/assets/images/readme/pdfs/create-account.pdf)
+- [Log in page](static/assets/images/readme/pdfs/log-in.pdf)
+- [Reviews page](static/assets/images/readme/pdfs/reviews-visitor.pdf)
+- [Add/Edit review page](static/assets/images/readme/pdfs/add-edit-review.pdf)
+- [Read review page visitor view](static/assets/images/readme/pdfs/read-review-visitor.pdf)
+- [Read review page user view](static/assets/images/readme/pdfs/read-review-user.pdf)
+- [Mobile view](static/assets/images/readme/pdfs/mobile.pdf)
+- [Tablet view](static/assets/images/readme/pdfs/tablet.pdf)
 
 
 ### **<u>Design</u>**
@@ -157,7 +157,7 @@ The final design has been influenced by mentor and user feedback so the wirefram
 
 * As an administrator I want to easily manage both categories from one screen.
 
- > **Note**: These user stories are tested in [testing.md]()
+ > **Note**: The user stories are tested in [testing.md](https://github.com/NikolasKotsikos/uReview/blob/master/testing.md).
 
 ## &rarr; **Database Architecture**
 
@@ -209,10 +209,10 @@ The final design has been influenced by mentor and user feedback so the wirefram
   - Used for delete confirmation and admin edit genres and platforms tools.
 
 - **Carousel**
-  - Used for cuisine categories displayed on the homepage.
+  - Used for sorting reviews by genre and platform displayed on the homepage.
 
 - **Search bar**
-  - Allows the user to search reviews by keywords using text index searching. review names, cuisine names, ingredients, and food categories are included as the keywords for the query.
+  - Allows the user to search reviews by keywords using text index searching. Review names, genre and platform names, developer names and release years can be used as keywords for the query.
 
 - **Flash Messages**
   - Used for login and register form error responses.
