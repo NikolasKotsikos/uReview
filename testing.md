@@ -1,7 +1,6 @@
 ## &rarr; **Testing**
 
 **<details open><summary> Testing Documentation</summary>**
-  - [Admin tools](#admin-tools)
   - [Testing user stories](#testing-user-stories)
   - [Manual function testing](#manual-function-testing)
   - [Validator checks](#validator-checks)
@@ -12,14 +11,6 @@
 </details>
 
 ---
-
-### Admin tools 
-
-uReview features tools specifically for the site's administrator. In order to access the app as an administrator, use the credentials provided bellow.
-
-**<details><summary><u>Assessor only!</u></summary>**
-  > **Note**: Use admin as the username and LidakiPixi3 as the password to access the admin functionality of the app.
-</details> 
 
 ### Testing user stories
 
