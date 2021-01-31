@@ -83,6 +83,8 @@ The final design has been influenced by mentor and user feedback so the wirefram
 
 ### **<u>Design</u>**
 
+<img src="static/assets/images/readme/site-map.png">
+
 **Structure**
 
 - A simple design structure with a fixed navbar, a dropdown side navigation menu accessible from every page and a fixed footer. A brand logo is displayed in the top left of the screen to allow easy navigation back to the homepage.
@@ -122,8 +124,6 @@ The final design has been influenced by mentor and user feedback so the wirefram
 
 
 ### <u>**User stories**</u>
-
-<img src="static/assets/images/readme/site-map.png">
 
 **Visitor UX:**
 
