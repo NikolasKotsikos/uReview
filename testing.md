@@ -1,6 +1,7 @@
 ## &rarr; **Testing**
 
 **<details open><summary> Testing Documentation</summary>**
+  - [Admin tools](#accessor-log-in-details)
   - [Testing user stories](#testing-user-stories)
   - [Manual function testing](#manual-function-testing)
   - [Validator checks](#validator-checks)
@@ -12,19 +13,30 @@
 
 ---
 
-#### Testing user stories
+### Admin tools 
+
+uReview features tools specifically for the site's administrator. In order to access the app as an administrator, use the credentials provided bellow.
+
+**<details><summary><u>Assessor only!</u></summary>**
+  > **Note**: Use admin as the username and LidakiPixi3 as the password to access the admin functionality of the app.
+</details> 
+
+### Testing user stories
 
 Testing my site visitor's <u>key priorities</u>:
 
-**1. A Simple, user-friendly site that is easy to navigate**
- - Site includes a main navbar featuring a dropdown side nav, with same and different page navigation.
- 
+**1. As a visitor I want to easily navigate the site and find reviews from the home page.**
+- Site includes a main navbar featuring a side nav, with same and different page navigation. 
 - Navigation menu is fixed so is always visible to the user.
+- The home page features four distinct ways to find reviews: a call-to-action button on the orange text overlay, a keyword search bar, a by genre selection carousel and a by platform selection carousel.
 - Brand logo directs the user back to the homepage from anywhere on the site.
-- 404 & 500 Error pages: I decided to create a custom 404.html & 500.html page for my user so if they are directed to a non-existent domain, they are presented with a consistent and appealing page and an easy navigation button back to the homepage.
+- 404 & 500 Error pages: I decided to create a custom 404.html & 500.html page for my user so if they are directed to a non-existent domain or encounter an internal server error, 
+  they are presented with a consistent and appealing page and an easy navigation button back to the homepage.
+  <img src="static/assets/images/readme/404.png">
+   <img src="static/assets/images/readme/500.png">
 
  
-**2. Ability to register and an easily accessible button to 'Log in’**
+**2. As a visitor I don't want to have to make an account so as to experience content in the app.**
 
 - Clear login button visible on the navbar as soon as the user enters the site.
   - As the navbar is repeated on all pages of the site, the user can log in from any page.
@@ -33,56 +45,36 @@ Testing my site visitor's <u>key priorities</u>:
 - After clicking the log in button, the user is presented with a modal containing two tabs, giving the user an option to log in or register.
   - Validation is included in the input fields to let the user know if their input is valid through colour formatting.
 
-  ![Validation](static/assets/images/readme/validation.png)
-
+ 
   - Recognisable info icon with tooltip to let the user know which characters can be used.
 
-![Tooltips](static/assets/images/readme/tooltip.png)
 
 - User responses include notifying the user of any errors or success:
   - Errors are shown below password in modal
   - Success messages presented as a toast after the modal closes.
 
-![User responses](static/assets/images/readme/user-responses.png)
 
 - After logging in or registering the user will have the option to add, edit, and delete their own reviews.
 
-**3. Explore reviews posted by others**
+**3. As a visitor I want to be able to sort and search posted reviews based on a categories or keywords.**
 
 - ‘Explore reviews’ button visible on the callout section as soon as the user enters the site. 
 - Navigation-link to reviews also included in the dropdown menu.
-
-    ![Explore reviews nav ](static/assets/images/readme/reviews-nav.png)
-
 - The review page contains review cards displaying review image, review name, cuisine, and who the review was created by.
-
-    ![reviews page](static/assets/images/readme/review-page.png)
-
 - The user can click onto a review card to direct them to the view review page which provides more details including age range, serving, time, food course, ingredients, and method.
 
-    ![View reviews page](static/assets/images/readme/v-review-page.png)
+Testing my site registered user's <u>key priorities</u>:
 
-**4. Clear review categorisation and search bar to allow quick browsing**
+**1. Clear review categorisation and search bar to allow quick browsing**
 
 - Link in the dropdown menu to the page displaying cuisine categories.
-
-![Dropdown menu](static/assets/images/readme/cuisine-dd.png)
-
 - There is also a Carousel on the homepage which takes the user to the specific cuisine they click on.
-
-  ![Carousel](static/assets/images/readme/carousel.png)
-
 - Once on the cuisine page the user can click on a cuisine card to view all reviews within that category.
-
-![Dropdown menu](static/assets/images/readme/cuisine-page.png)
-
 - Search bar to allow the user to search for reviews using keywords. The search bar is set up to filter reviews based on cuisine name, review name, and ingredients.
-   - Search bar input label to give user ideas of what to query by.
-
-    ![Search bar](static/assets/images/readme/search.png)
+- Search bar input label to give user ideas of what to query by.
 
 
-**5. Option to add, edit and delete own reviews**
+**2. Option to add, edit and delete own reviews**
 - When the user is logged in the ‘add review’ button is visible to the user on the first view of the site. The link is also accessible via the dropdown menu.
 
 - When the user clicks 'Add review' they are taken to the add review page which presents the user with a template of inputs to fill out.

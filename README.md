@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="static/assets/images/readme/uR-ResponsiveMockup.png">
+  <img src="static/assets/images/readme/uR-Responsive.png">
   <img src="static/assets/images/readme/logo.png">
 <hr>
 
@@ -127,20 +127,22 @@ The final design has been influenced by mentor and user feedback so the wirefram
 
 **Visitor UX:**
 
-* As a visitor I want to be able to easily browse and find reviews from the home page.
+* As a visitor I want to easily navigate the site and find reviews from the home page.
 
 * As a visitor I don't want to have to make an account so as to experience content in the app. 
 
-* As a visitor I want to be able to sort and search posted reviews based on a categories or keywords. 
+* As a visitor I want to sort and search posted reviews based on a categories or keywords. 
 
 
 **Registered User UX**
 
-* As a registered user I want to be able to easily find how I can register in order to post a review. 
+* As a registered user I want to easily find how I can log-in in order to post a review. 
 
 * As a registered user I want to be able to add my review easily. 
 
-* As a registered user I want to be able to see a collection of my psoted reviews easily.
+* As a registered user I want to see a collection of my posted reviews in one page.
+
+* As a registered user I want to have a profile page that bundles functionality.
 
 * As a registered user I want to be able to edit and delete my reviews. 
 
@@ -149,13 +151,10 @@ The final design has been influenced by mentor and user feedback so the wirefram
  
 **Administrator User UX**
 
-* As an administrator I want to be able to easily delete any review.
+* As an administrator I want to easily moderate user posted contents.
 
-* As an administrator I want to be able to add new genres and platforms.
+* As an administrator I want to be able to manage genres and platforms by adding new ones or deleting underused ones.
 
-* As an administrator I want to be able to delete existing genres and platforms.
-
-* As an administrator I want to easily manage both categories from one screen.
 
  > **Note**: The user stories are tested in [testing.md](https://github.com/NikolasKotsikos/uReview/blob/master/testing.md).
 
